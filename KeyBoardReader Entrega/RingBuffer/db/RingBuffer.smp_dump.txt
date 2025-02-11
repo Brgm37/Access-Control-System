@@ -1,0 +1,11 @@
+
+State Machine - |ringBuffer|RingBufferControl:URingBufferControl|CurrentState
+Name CurrentState.STATE_DAC CurrentState.STATE_NOTPUTGET CurrentState.STATE_PUTNOTGET CurrentState.STATE_INCGET CurrentState.STATE_INCPUT CurrentState.STATE_WR CurrentState.STATE_RE CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 0 0 0 0 0 
+CurrentState.STATE_RE 0 0 0 0 0 0 1 1 
+CurrentState.STATE_WR 0 0 0 0 0 1 0 1 
+CurrentState.STATE_INCPUT 0 0 0 0 1 0 0 1 
+CurrentState.STATE_INCGET 0 0 0 1 0 0 0 1 
+CurrentState.STATE_PUTNOTGET 0 0 1 0 0 0 0 1 
+CurrentState.STATE_NOTPUTGET 0 1 0 0 0 0 0 1 
+CurrentState.STATE_DAC 1 0 0 0 0 0 0 1 

@@ -1,0 +1,32 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/ISEL/LIC/UsbPort/usbport.vhd}
+vcom -93 -work work {C:/ISEL/LIC/OutputBuffer/Registo4.vhd}
+vcom -93 -work work {C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd}
+vcom -93 -work work {C:/ISEL/LIC/OutputBuffer/BufferControl.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/RingBuffer.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Registo3.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Ram.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/mux21.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/HA.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/FA.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Contador.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/AddSub3.vhd}
+vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Adder3.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyScan/Mux41.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyScan/KeyScan.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyScan/FFD.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyScan/DEC.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyScan/Counter.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyControl/KeyControl.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyDecoder/KeyDecoder.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyBoardReader/CLKDIV.vhd}
+vcom -93 -work work {C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd}
+

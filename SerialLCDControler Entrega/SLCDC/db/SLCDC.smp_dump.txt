@@ -1,0 +1,12 @@
+
+State Machine - |SLCDC|Dispatcher:UDispatcher|CurrentState
+Name CurrentState.STATE_DONE CurrentState.STATE_DATA CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 
+CurrentState.STATE_DATA 0 1 1 
+CurrentState.STATE_DONE 1 0 1 
+
+State Machine - |SLCDC|SerialReceiver:USerialReceiver|SerialControl:USerialControl|CurrentState
+Name CurrentState.STATE_ACCEPTED CurrentState.STATE_WAITING CurrentState.STATE_RECEIVING 
+CurrentState.STATE_RECEIVING 0 0 0 
+CurrentState.STATE_WAITING 0 1 1 
+CurrentState.STATE_ACCEPTED 1 0 1 

@@ -1,0 +1,521 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ISEL/LIC/RingBuffer/simulation/modelsim
+Eadder3
+Z1 w1685715534
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/ISEL/LIC/RingBuffer/Adder3.vhd
+Z5 FC:/ISEL/LIC/RingBuffer/Adder3.vhd
+l0
+L4
+VgMCGk_cEQBb3_K3C6PTmH3
+!s100 nAD^NKKe@Z11J?DL?[oD@1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1687090882
+!i10b 1
+Z8 !s108 1687090881.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/Adder3.vhd|
+Z10 !s107 C:/ISEL/LIC/RingBuffer/Adder3.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Alogic
+R2
+R3
+DEx4 work 6 adder3 0 22 gMCGk_cEQBb3_K3C6PTmH3
+l27
+L14
+Va@VmQ<bSEj@iNc0QWT5iI3
+!s100 8L19hDAc=hikgi5:0kGmj3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eaddsub3
+Z13 w1685711643
+R2
+R3
+R0
+Z14 8C:/ISEL/LIC/RingBuffer/AddSub3.vhd
+Z15 FC:/ISEL/LIC/RingBuffer/AddSub3.vhd
+l0
+L4
+V:1hYWAJ_VAL_nR=On7ZmU0
+!s100 @49b?9fFZ[meBcWAf>^>`3
+R6
+31
+R7
+!i10b 1
+Z16 !s108 1687090882.000000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/AddSub3.vhd|
+Z18 !s107 C:/ISEL/LIC/RingBuffer/AddSub3.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 7 addsub3 0 22 :1hYWAJ_VAL_nR=On7ZmU0
+l28
+L14
+VX8Y5eeog<KNK<e^2`?X4V0
+!s100 Ri0B`3^P>XJn`I90eEVEa2
+R6
+31
+R7
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R11
+R12
+Econtador
+Z19 w1684226500
+R2
+R3
+R0
+Z20 8C:/ISEL/LIC/RingBuffer/Contador.vhd
+Z21 FC:/ISEL/LIC/RingBuffer/Contador.vhd
+l0
+L4
+VZgUG9VdC8kkTR=8AdHTFD1
+!s100 SRU>B0I46jWPggl=d=jo:2
+R6
+31
+Z22 !s110 1687090881
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/Contador.vhd|
+Z24 !s107 C:/ISEL/LIC/RingBuffer/Contador.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 8 contador 0 22 ZgUG9VdC8kkTR=8AdHTFD1
+l27
+L13
+VAT6kJlZ[AQC0;YG<I_M7h0
+!s100 _?iMY=II;T^cMT;z2Eg7L3
+R6
+31
+R22
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Efa
+Z25 w1684224827
+R2
+R3
+R0
+Z26 8C:/ISEL/LIC/RingBuffer/FA.vhd
+Z27 FC:/ISEL/LIC/RingBuffer/FA.vhd
+l0
+L4
+V^EI10VcUB47UG3S:VjTGN2
+!s100 02MZ>DMCnb4W@60429Fc?0
+R6
+31
+R7
+!i10b 1
+R16
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/FA.vhd|
+Z29 !s107 C:/ISEL/LIC/RingBuffer/FA.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 2 fa 0 22 ^EI10VcUB47UG3S:VjTGN2
+l26
+L14
+VJA8[Mm3D?ge?lcd]Ve3DE3
+!s100 b[GeZXU;R^:8:Y3JDg9RT0
+R6
+31
+R7
+!i10b 1
+R16
+R28
+R29
+!i113 1
+R11
+R12
+Effd
+Z30 w1683630599
+R2
+R3
+R0
+Z31 8C:/ISEL/LIC/RingBuffer/FFD.vhd
+Z32 FC:/ISEL/LIC/RingBuffer/FFD.vhd
+l0
+L4
+VlLnJhUY99`]7^:0M0ZT@z3
+!s100 7zIA7N0c8k?G4DH:]Q7>;3
+R6
+31
+R22
+!i10b 1
+R8
+Z33 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/FFD.vhd|
+Z34 !s107 C:/ISEL/LIC/RingBuffer/FFD.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 ffd 0 22 lLnJhUY99`]7^:0M0ZT@z3
+l16
+L14
+VXLGJhA0YLNkWk3eiz=LFX0
+!s100 EbhLHDh93W5h:OfQP8>M81
+R6
+31
+R22
+!i10b 1
+R8
+R33
+R34
+!i113 1
+R11
+R12
+Eha
+Z35 w1684224419
+R2
+R3
+R0
+Z36 8C:/ISEL/LIC/RingBuffer/HA.vhd
+Z37 FC:/ISEL/LIC/RingBuffer/HA.vhd
+l0
+L4
+VzKez>60V@QXOELkCUkTEi1
+!s100 ?W>MVlk;cHn<];5B?==dE0
+R6
+31
+R22
+!i10b 1
+R8
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/HA.vhd|
+Z39 !s107 C:/ISEL/LIC/RingBuffer/HA.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 2 ha 0 22 zKez>60V@QXOELkCUkTEi1
+l14
+L13
+V7f0`8Y`4DP46KSeDkWjb]1
+!s100 e0P`MaBY6z1[i0dTdSfkc3
+R6
+31
+R22
+!i10b 1
+R8
+R38
+R39
+!i113 1
+R11
+R12
+Ememoryadresscontrol
+Z40 w1685715156
+R2
+R3
+R0
+Z41 8C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd
+Z42 FC:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd
+l0
+L4
+Vej87Omz:>kJHD`z<36GJ80
+!s100 W[nzC^[Vd7b@C1Mc]cWci1
+R6
+31
+R22
+!i10b 1
+R8
+Z43 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd|
+Z44 !s107 C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd|
+!i113 1
+R11
+R12
+Aarq_memoryadresscontrol
+R2
+R3
+DEx4 work 19 memoryadresscontrol 0 22 ej87Omz:>kJHD`z<36GJ80
+l57
+L16
+V[L;5A2GF1U@aiZ:JdzM[`3
+!s100 _3W0?ahI]90oQ;a=8D4kH0
+R6
+31
+R22
+!i10b 1
+R8
+R43
+R44
+!i113 1
+R11
+R12
+Ememoryadresscontrol_tb
+Z45 w1687091056
+R2
+R3
+R0
+Z46 8C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd
+Z47 FC:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd
+l0
+L4
+VloFk4;16dXG7D3=oVhTUB2
+!s100 fjhSc?]_PI_W@CcQF<n4J0
+R6
+32
+Z48 !s110 1687091104
+!i10b 1
+Z49 !s108 1687091104.000000
+Z50 !s90 -reportprogress|300|-work|work|C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd|
+Z51 !s107 C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd|
+!i113 1
+Z52 o-work work
+R12
+Abehavioral
+R2
+R3
+Z53 DEx4 work 22 memoryadresscontrol_tb 0 22 loFk4;16dXG7D3=oVhTUB2
+l30
+L7
+VYHKWiP2OzBODcSLlmD4U91
+!s100 7I@2UJz7KKkMGfljiGO1C0
+R6
+32
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R52
+R12
+Emux21
+Z54 w1684224512
+R2
+R3
+R0
+Z55 8C:/ISEL/LIC/RingBuffer/mux21.vhd
+Z56 FC:/ISEL/LIC/RingBuffer/mux21.vhd
+l0
+L4
+V=z@al]iiN6`NeG>1=ZE>_1
+!s100 9SUZ`OhV4X5h=aHHCd2Ve3
+R6
+31
+R22
+!i10b 1
+R8
+Z57 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/mux21.vhd|
+Z58 !s107 C:/ISEL/LIC/RingBuffer/mux21.vhd|
+!i113 1
+R11
+R12
+Aarq_mux21
+R2
+R3
+DEx4 work 5 mux21 0 22 =z@al]iiN6`NeG>1=ZE>_1
+l12
+L11
+VRO071F?b3MWJ83Of<VabU1
+!s100 Rd7gb7kf8Kbczc[:1YUOK0
+R6
+31
+R22
+!i10b 1
+R8
+R57
+R58
+!i113 1
+R11
+R12
+Eram
+Z59 w1683619089
+Z60 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R2
+R3
+R0
+Z61 8C:/ISEL/LIC/RingBuffer/Ram.vhd
+Z62 FC:/ISEL/LIC/RingBuffer/Ram.vhd
+l0
+L21
+VIzc2z]o^UnZbR@alQW]Rh3
+!s100 ?Nkfo<:[8oQFCSE2S@UW]1
+R6
+31
+R22
+!i10b 1
+R8
+Z63 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/Ram.vhd|
+Z64 !s107 C:/ISEL/LIC/RingBuffer/Ram.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R60
+R2
+R3
+DEx4 work 3 ram 0 22 Izc2z]o^UnZbR@alQW]Rh3
+l39
+L34
+VT0O4O^`?4IKEWCzQ3iWI31
+!s100 ]KDBZXJbb?dk<NB0hQ_ZP0
+R6
+31
+R22
+!i10b 1
+R8
+R63
+R64
+!i113 1
+R11
+R12
+Eregisto3
+Z65 w1685711440
+R2
+R3
+R0
+Z66 8C:/ISEL/LIC/RingBuffer/Registo3.vhd
+Z67 FC:/ISEL/LIC/RingBuffer/Registo3.vhd
+l0
+L4
+VDj<L^ARn:KFdS=:PYI8h[3
+!s100 1;Tn`1@1j8Yj>^c[jLIVc0
+R6
+31
+R22
+!i10b 1
+R8
+Z68 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/Registo3.vhd|
+Z69 !s107 C:/ISEL/LIC/RingBuffer/Registo3.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 8 registo3 0 22 Dj<L^ARn:KFdS=:PYI8h[3
+l26
+L14
+Vo:@z[RlhcI_IZnNOOTA8Q0
+!s100 gfKFKY=e2nz0`DE=2zad^2
+R6
+31
+R22
+!i10b 1
+R8
+R68
+R69
+!i113 1
+R11
+R12
+Eringbuffer
+Z70 w1686817834
+R2
+R3
+R0
+Z71 8C:/ISEL/LIC/RingBuffer/RingBuffer.vhd
+Z72 FC:/ISEL/LIC/RingBuffer/RingBuffer.vhd
+l0
+L4
+VLXlbm0g:^z_0?BkMmCkUT2
+!s100 63[Ac7l6hzDK`G5YNiSc13
+R6
+31
+R22
+!i10b 1
+R8
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/RingBuffer.vhd|
+Z74 !s107 C:/ISEL/LIC/RingBuffer/RingBuffer.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 10 ringbuffer 0 22 LXlbm0g:^z_0?BkMmCkUT2
+l59
+L16
+Vad82k>:Jc9]Z_=VoDRfY]1
+!s100 Gm2ZhOP`T5Az6;ijZM>iP1
+R6
+31
+R22
+!i10b 1
+R8
+R73
+R74
+!i113 1
+R11
+R12
+Eringbuffercontrol
+Z75 w1684236341
+R60
+R2
+R3
+R0
+Z76 8C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd
+Z77 FC:/ISEL/LIC/RingBuffer/RingBufferControl.vhd
+l0
+L5
+V1jbao5hHQQYf`[RJdU0@I3
+!s100 FF4Uo3`nNHX<7;EceOXiP0
+R6
+31
+R22
+!i10b 1
+R8
+Z78 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd|
+Z79 !s107 C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R60
+R2
+R3
+DEx4 work 17 ringbuffercontrol 0 22 1jbao5hHQQYf`[RJdU0@I3
+l27
+L22
+V:N41m]DcofHY6bbU5I4`R2
+!s100 i<4oM1N?ej7aQ[U`B@;3h3
+R6
+31
+R22
+!i10b 1
+R8
+R78
+R79
+!i113 1
+R11
+R12

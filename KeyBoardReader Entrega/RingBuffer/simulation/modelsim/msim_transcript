@@ -1,0 +1,231 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do RingBuffer_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Ram.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Ram.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity RAM
+# -- Compiling architecture behavioral of RAM
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity RingBufferControl
+# -- Compiling architecture behavioral of RingBufferControl
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Contador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Contador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Contador
+# -- Compiling architecture logic of Contador
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/RingBuffer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/RingBuffer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ringBuffer
+# -- Compiling architecture logic of ringBuffer
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/HA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/HA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity HA
+# -- Compiling architecture logic of HA
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity memoryAdressControl
+# -- Compiling architecture arq_memoryAdressControl of memoryAdressControl
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/mux21.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/mux21.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture arq_mux21 of mux21
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Registo3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Registo3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Registo3
+# -- Compiling architecture logic of Registo3
+# End time: 13:21:21 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Adder3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:21 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Adder3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Adder3
+# -- Compiling architecture logic of Adder3
+# End time: 13:21:22 on Jun 18,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/AddSub3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:22 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/AddSub3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub3
+# -- Compiling architecture logic of AddSub3
+# End time: 13:21:22 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/FA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:22 on Jun 18,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/FA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FA
+# -- Compiling architecture logic of FA
+# End time: 13:21:22 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:21:59 on Jun 18,2023
+# vcom -reportprogress 300 -work work C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity memoryAdressControl_tb
+# -- Compiling architecture behavioral of memoryAdressControl_tb
+# End time: 13:21:59 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.memoryadresscontrol_tb
+# vsim work.memoryadresscontrol_tb 
+# Start time: 13:22:13 on Jun 18,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.memoryadresscontrol_tb(behavioral)
+# Loading work.memoryadresscontrol(arq_memoryadresscontrol)
+# Loading work.registo3(logic)
+# Loading work.ffd(logicfunction)
+# Loading work.addsub3(logic)
+# Loading work.adder3(logic)
+# Loading work.fa(logic)
+# Loading work.ha(logic)
+# Loading work.contador(logic)
+# Loading work.mux21(arq_mux21)
+# ** Warning: (vsim-8683) Uninitialized out port /memoryadresscontrol_tb/UUT/UAddSub3/UAdder3/CO has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/memoryadresscontrol_tb/Aoutput_tb \
+sim:/memoryadresscontrol_tb/Clk_tb \
+sim:/memoryadresscontrol_tb/MCLK_HALF_PERIOD \
+sim:/memoryadresscontrol_tb/MCLK_PERIOD \
+sim:/memoryadresscontrol_tb/Rst_tb \
+sim:/memoryadresscontrol_tb/empty_tb \
+sim:/memoryadresscontrol_tb/full_tb \
+sim:/memoryadresscontrol_tb/incGet_tb \
+sim:/memoryadresscontrol_tb/incPut_tb \
+sim:/memoryadresscontrol_tb/putget_tb
+run
+vcom -reportprogress 300 -work work C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:25:04 on Jun 18,2023
+# vcom -reportprogress 300 -work work C:/ISEL/LIC/RingBuffer/memoryAdressControl_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity memoryAdressControl_tb
+# -- Compiling architecture behavioral of memoryAdressControl_tb
+# End time: 13:25:04 on Jun 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.memoryadresscontrol_tb
+# End time: 13:25:09 on Jun 18,2023, Elapsed time: 0:02:56
+# Errors: 0, Warnings: 1
+# vsim work.memoryadresscontrol_tb 
+# Start time: 13:25:09 on Jun 18,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.memoryadresscontrol_tb(behavioral)
+# Loading work.memoryadresscontrol(arq_memoryadresscontrol)
+# Loading work.registo3(logic)
+# Loading work.ffd(logicfunction)
+# Loading work.addsub3(logic)
+# Loading work.adder3(logic)
+# Loading work.fa(logic)
+# Loading work.ha(logic)
+# Loading work.contador(logic)
+# Loading work.mux21(arq_mux21)
+# ** Warning: (vsim-8683) Uninitialized out port /memoryadresscontrol_tb/UUT/UAddSub3/UAdder3/CO has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/memoryadresscontrol_tb/Aoutput_tb \
+sim:/memoryadresscontrol_tb/Clk_tb \
+sim:/memoryadresscontrol_tb/MCLK_HALF_PERIOD \
+sim:/memoryadresscontrol_tb/MCLK_PERIOD \
+sim:/memoryadresscontrol_tb/Rst_tb \
+sim:/memoryadresscontrol_tb/empty_tb \
+sim:/memoryadresscontrol_tb/full_tb \
+sim:/memoryadresscontrol_tb/incGet_tb \
+sim:/memoryadresscontrol_tb/incPut_tb \
+sim:/memoryadresscontrol_tb/putget_tb
+run

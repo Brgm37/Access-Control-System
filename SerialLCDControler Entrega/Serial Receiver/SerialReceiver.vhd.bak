@@ -1,0 +1,79 @@
+ibrary IEEE;
+use IEEE.std_logic_1164.all;
+
+entity SerialReceiver is
+    port (
+        SDX: in std_logic;
+		  SCLK: in std_logic;
+		  not_SS: in std_logic;
+		  accept: in std_logic;
+		  D: out std_logic_vector(4 downto 0);
+		  reset: in std_logic;
+		  DXval: out std_logic
+    );
+end SerialReceiver;
+
+architecture logic of SerialReceiver is
+
+	component SerialControl is 
+		port (
+			enRx: in std_logic;
+			accept: in std_logic;
+			clr: out std_logic;
+			wr: out std_logic;
+			rst: in std_logic;
+			DXval: out std_logic;
+			eq5: in std_logic
+		);
+	end component;
+	component CounterUpDown3 is
+		port (
+        Clk : in std_logic; -- Clock
+        Rst : in std_logic; -- Reset
+        Q : out std_logic_vector(2 downto 0) -- output
+		);
+	end component;
+	component shiftReg5 is
+		port(
+			Clk: in std_logic;
+			I: in std_logic;
+			En: in std_logic;
+			rst: in std_logic;
+			O: out std_logic_Vector(4 downto 0)
+		);
+	end component;
+
+    signal seq5in, swr, sclr: std_logic;
+	 signal seq5out: std_logic_vector(2 downto 0);
+	 
+begin
+
+   UCounter: CounterUpDown3
+		port map(
+			Clk => SCLK, -- Clock
+			Rst => sclr, -- Reset
+			Q => seq5
+		);
+		
+	UshiftReg5: shiftReg5
+		port map(
+			Clk => SCLK,
+			I => SDX,
+			En => swr,
+			rst => reset,
+			O => D
+		);
+	USerialControl: SerialControl
+		port map(
+			enRx => not_SS,
+			accept => accept,
+			clr => sclr,
+			wr => swr,
+			rst => reset,
+			DXval => DXval,
+			eq5 => sqe5in
+	
+	sqe5in <= sqe5out(0) and not sqe5out(1) and sqe5out(2);
+
+
+end logic;

@@ -1,0 +1,28 @@
+entity MemoryAddressControl is
+	port(
+		putGet: In std_logic;
+		incPut: In std_logic;
+		incGet: In std_logic;
+		rst: in std_logic;
+		full: out std_logic;
+		empty: out std_logic;
+		A: out std_logic_vector(2 downto 0)
+	);
+end MemoryAddressControl;
+architecture logic of RingBufferControl is
+	component Contador
+		port (
+			Clk : in std_logic;
+			Rst : in std_logic;
+			Q : out std_logic_vector(2 downto 0);
+			Count_Enable: in std_logic
+		);
+	
+	component somador
+		port (
+			idxR: in std_logic_vector(2 downto 0);
+			idxW: in std_logic_vector(2 downto 0);
+			full: out std_logic;
+			empty: out std_logic
+		);
+	begin 

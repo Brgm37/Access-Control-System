@@ -1,0 +1,50 @@
+
+State Machine - |AccessControlSystem|SDC:USDC|DoorController:UDispatcher|CurrentState
+Name CurrentState.STATE_DONE CurrentState.STATE_CLOSING CurrentState.STATE_OPENING CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 0 
+CurrentState.STATE_OPENING 0 0 1 1 
+CurrentState.STATE_CLOSING 0 1 0 1 
+CurrentState.STATE_DONE 1 0 0 1 
+
+State Machine - |AccessControlSystem|SDC:USDC|serialReceiverDC:USerialReceiver|SerialControl:serialControl1|CurrentState
+Name CurrentState.STATE_ACCEPTED CurrentState.STATE_WAITING CurrentState.STATE_RECEIVING 
+CurrentState.STATE_RECEIVING 0 0 0 
+CurrentState.STATE_WAITING 0 1 1 
+CurrentState.STATE_ACCEPTED 1 0 1 
+
+State Machine - |AccessControlSystem|SLCDC:USLCDC|Dispatcher:UDispatcher|CurrentState
+Name CurrentState.STATE_DONE CurrentState.STATE_DATA CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 
+CurrentState.STATE_DATA 0 1 1 
+CurrentState.STATE_DONE 1 0 1 
+
+State Machine - |AccessControlSystem|SLCDC:USLCDC|SerialReceiver:USerialReceiver|SerialControl:USerialControl|CurrentState
+Name CurrentState.STATE_ACCEPTED CurrentState.STATE_WAITING CurrentState.STATE_RECEIVING 
+CurrentState.STATE_RECEIVING 0 0 0 
+CurrentState.STATE_WAITING 0 1 1 
+CurrentState.STATE_ACCEPTED 1 0 1 
+
+State Machine - |AccessControlSystem|KeyBoardReader:UKeyBoardReader|OutputBuffer:UOutputBuffer|BufferControl:UBufferControl|CurrentState
+Name CurrentState.STATE_CLK_ZERO CurrentState.STATE_WR CurrentState.STATE_PULSING CurrentState.STATE_RECEIVING CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 0 0 
+CurrentState.STATE_RECEIVING 0 0 0 1 1 
+CurrentState.STATE_PULSING 0 0 1 0 1 
+CurrentState.STATE_WR 0 1 0 0 1 
+CurrentState.STATE_CLK_ZERO 1 0 0 0 1 
+
+State Machine - |AccessControlSystem|KeyBoardReader:UKeyBoardReader|ringBuffer:URingBuffer|RingBufferControl:URingBufferControl|CurrentState
+Name CurrentState.STATE_DAC CurrentState.STATE_NOTPUTGET CurrentState.STATE_PUTNOTGET CurrentState.STATE_INCGET CurrentState.STATE_INCPUT CurrentState.STATE_WR CurrentState.STATE_RE CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 0 0 0 0 0 
+CurrentState.STATE_RE 0 0 0 0 0 0 1 1 
+CurrentState.STATE_WR 0 0 0 0 0 1 0 1 
+CurrentState.STATE_INCPUT 0 0 0 0 1 0 0 1 
+CurrentState.STATE_INCGET 0 0 0 1 0 0 0 1 
+CurrentState.STATE_PUTNOTGET 0 0 1 0 0 0 0 1 
+CurrentState.STATE_NOTPUTGET 0 1 0 0 0 0 0 1 
+CurrentState.STATE_DAC 1 0 0 0 0 0 0 1 
+
+State Machine - |AccessControlSystem|KeyBoardReader:UKeyBoardReader|KeyDecoder:UKeyDecoder|KeyControl:UKeyControl|CurrentState
+Name CurrentState.STATE_READY CurrentState.STATE_WAITING CurrentState.STATE_SCANNING 
+CurrentState.STATE_SCANNING 0 0 0 
+CurrentState.STATE_WAITING 0 1 1 
+CurrentState.STATE_READY 1 0 1 

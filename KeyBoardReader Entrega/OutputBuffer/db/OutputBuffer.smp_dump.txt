@@ -1,0 +1,8 @@
+
+State Machine - |OutputBuffer|BufferControl:UBufferControl|CurrentState
+Name CurrentState.STATE_CLK_ZERO CurrentState.STATE_WR CurrentState.STATE_PULSING CurrentState.STATE_RECEIVING CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 0 0 
+CurrentState.STATE_RECEIVING 0 0 0 1 1 
+CurrentState.STATE_PULSING 0 0 1 0 1 
+CurrentState.STATE_WR 0 1 0 0 1 
+CurrentState.STATE_CLK_ZERO 1 0 0 0 1 

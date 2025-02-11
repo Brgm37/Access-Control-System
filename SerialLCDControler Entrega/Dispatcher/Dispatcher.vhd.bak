@@ -1,0 +1,22 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Dispatcher is
+    port (
+        Dval: in std_logic;
+		  Din: in std_logic_vector(4 downto 0);
+		  Dout: out std_logic_vector(4 downto 0);
+		  Wel: out std_logic;
+		  done: out std_logic
+    );
+end Dispatcher;
+
+architecture logic of Dispatcher is
+	
+	begin 
+	
+	Wel <= Dval;
+	done <= done;
+	Dout <= Din;
+
+end logic;

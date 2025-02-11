@@ -1,0 +1,244 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ISEL/LIC/KeyScan/simulation/modelsim
+Ecounter
+Z1 w1678185214
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/ISEL/LIC/KeyScan/Counter.vhd
+Z5 FC:/ISEL/LIC/KeyScan/Counter.vhd
+l0
+L4
+Vzm8dS:QZl2>nNn4E6A2?@3
+!s100 PQRzj25dedU4h^edHNzNQ1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1678189942
+!i10b 1
+Z8 !s108 1678189942.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/KeyScan/Counter.vhd|
+Z10 !s107 C:/ISEL/LIC/KeyScan/Counter.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Alogic
+R2
+R3
+DEx4 work 7 counter 0 22 zm8dS:QZl2>nNn4E6A2?@3
+l29
+L13
+Vzh4KfFNV2b`V;eHInWTZD3
+!s100 90VW4dbzGNaMaonX<hK5:1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edec
+Z13 w1678185164
+R2
+R3
+R0
+Z14 8C:/ISEL/LIC/KeyScan/DEC.vhd
+Z15 FC:/ISEL/LIC/KeyScan/DEC.vhd
+l0
+L4
+VNnTK7HbBn7l2VzEzn=Z][0
+!s100 ?Bn7`VWhUX^Ll?>[MemiL3
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/KeyScan/DEC.vhd|
+Z17 !s107 C:/ISEL/LIC/KeyScan/DEC.vhd|
+!i113 1
+R11
+R12
+Aarq_dec
+R2
+R3
+DEx4 work 3 dec 0 22 NnTK7HbBn7l2VzEzn=Z][0
+l11
+L10
+V:3eWCHL_K75<2Q<V`>@bN2
+!s100 OaSkXW5HRM12d3SC?:kN21
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Effd
+Z18 w1678185198
+R2
+R3
+R0
+Z19 8C:/ISEL/LIC/KeyScan/FFD.vhd
+Z20 FC:/ISEL/LIC/KeyScan/FFD.vhd
+l0
+L4
+VlLnJhUY99`]7^:0M0ZT@z3
+!s100 7zIA7N0c8k?G4DH:]Q7>;3
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/KeyScan/FFD.vhd|
+Z22 !s107 C:/ISEL/LIC/KeyScan/FFD.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 ffd 0 22 lLnJhUY99`]7^:0M0ZT@z3
+l16
+L14
+V7jbG1<`>AWgbQ=GUXC?`d2
+!s100 ?>n=3mNGnZG_MfGS7Se]N0
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Ekeyscan
+Z23 w1678185146
+R2
+R3
+R0
+Z24 8C:/ISEL/LIC/KeyScan/KeyScan.vhd
+Z25 FC:/ISEL/LIC/KeyScan/KeyScan.vhd
+l0
+L4
+V^b90eLLmfGkozEPfVCok[3
+!s100 gI3_F^;KkM9`hmLTEDjiA3
+R6
+31
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/KeyScan/KeyScan.vhd|
+Z27 !s107 C:/ISEL/LIC/KeyScan/KeyScan.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 7 keyscan 0 22 ^b90eLLmfGkozEPfVCok[3
+l62
+L16
+VlQ=eUXV3]@UgK:iIHM9>N3
+!s100 G4m0J86DYm2Fimof9gOnD2
+R6
+31
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12
+Ekeyscan_tb
+Z28 w1678189902
+R2
+R3
+R0
+Z29 8C:/ISEL/LIC/KeyScan/KeyScan_tb.vhd
+Z30 FC:/ISEL/LIC/KeyScan/KeyScan_tb.vhd
+l0
+L4
+VoVJ@N8fmOkOBQLLMh[?XD0
+!s100 nZGR[08Pbn2<n:>RZbRie1
+R6
+32
+Z31 !s110 1678189971
+!i10b 1
+Z32 !s108 1678189971.000000
+Z33 !s90 -reportprogress|300|-work|work|C:/ISEL/LIC/KeyScan/KeyScan_tb.vhd|
+Z34 !s107 C:/ISEL/LIC/KeyScan/KeyScan_tb.vhd|
+!i113 1
+Z35 o-work work
+R12
+Abehavioral
+R2
+R3
+DEx4 work 10 keyscan_tb 0 22 oVJ@N8fmOkOBQLLMh[?XD0
+l33
+L7
+V::4:C_g1b[Bl;`28AmAbZ3
+!s100 H:8LBLD:N=UJ8>IPKRa611
+R6
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R35
+R12
+Emux41
+Z36 w1678189393
+R2
+R3
+R0
+Z37 8C:/ISEL/LIC/KeyScan/Mux41.vhd
+Z38 FC:/ISEL/LIC/KeyScan/Mux41.vhd
+l0
+L4
+VN9UVN7lzz0afofDnD=E0e2
+!s100 7N`gX>Jk5HRk8;OzEgL>]0
+R6
+31
+R7
+!i10b 1
+R8
+Z39 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/KeyScan/Mux41.vhd|
+Z40 !s107 C:/ISEL/LIC/KeyScan/Mux41.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 5 mux41 0 22 N9UVN7lzz0afofDnD=E0e2
+l15
+L14
+VI=SiPaK7zgnB[PS6;;WU81
+!s100 LEYEE;ThW2[JLH;a6?Q0?3
+R6
+31
+R7
+!i10b 1
+R8
+R39
+R40
+!i113 1
+R11
+R12

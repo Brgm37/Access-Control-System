@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ISEL/LIC/KeyControl/simulation/modelsim
+Ekeycontrol
+Z1 w1681204003
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/ISEL/LIC/KeyControl/KeyControl.vhd
+Z5 FC:/ISEL/LIC/KeyControl/KeyControl.vhd
+l0
+L4
+VL4BP]C5TV:A6_BE9:Vc2^0
+!s100 ^kWgzVkCEHMZ[hOQ<]32]1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1682184853
+!i10b 1
+Z8 !s108 1682184853.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/KeyControl/KeyControl.vhd|
+Z10 !s107 C:/ISEL/LIC/KeyControl/KeyControl.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 10 keycontrol 0 22 L4BP]C5TV:A6_BE9:Vc2^0
+l20
+L15
+VFh^CFhdiBi]CZY@bcz6nP0
+!s100 a^o^Y=S?kSd2TF4m9]JUa2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ekeycontrol_tb
+Z13 w1682184798
+R2
+R3
+R0
+Z14 8C:/ISEL/LIC/KeyControl/KeyControl_tb.vhd
+Z15 FC:/ISEL/LIC/KeyControl/KeyControl_tb.vhd
+l0
+L4
+V_IYbAFW0;_:5R4b=_oDJJ2
+!s100 IQ]U`FmcggfXKckfS6f2^2
+R6
+32
+Z16 !s110 1682184913
+!i10b 1
+Z17 !s108 1682184913.000000
+Z18 !s90 -reportprogress|300|-work|work|C:/ISEL/LIC/KeyControl/KeyControl_tb.vhd|
+Z19 !s107 C:/ISEL/LIC/KeyControl/KeyControl_tb.vhd|
+!i113 1
+Z20 o-work work
+R12
+Akeycontrol_tb_arch
+R2
+R3
+DEx4 work 13 keycontrol_tb 0 22 _IYbAFW0;_:5R4b=_oDJJ2
+l29
+L7
+Vg_GY9=626X>P2J>GdmzQa3
+!s100 _`gjEiY0^6eJMmL<fZ4Xz1
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R20
+R12

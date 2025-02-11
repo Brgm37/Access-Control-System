@@ -1,0 +1,35 @@
+|DoorController
+Dval => GenerateNextState.IN0
+Dval => GenerateNextState.IN0
+Din[0] => GenerateNextState.IN1
+Din[0] => GenerateNextState.IN1
+Din[1] => Dout[1].DATAIN
+Din[2] => Dout[2].DATAIN
+Din[3] => Dout[3].DATAIN
+Din[4] => Dout[4].DATAIN
+Sclose => done.IN0
+Sclose => GenerateNextState.IN0
+Sclose => GenerateNextState.IN0
+Sopen => NextState.DATAA
+Sopen => Selector1.IN4
+Sopen => done.IN0
+Sopen => Selector0.IN2
+Sopen => NextState.DATAA
+Psensor => GenerateNextState.IN1
+Psensor => Selector4.IN3
+Psensor => NextState.OUTPUTSELECT
+Psensor => NextState.OUTPUTSELECT
+Psensor => Selector2.IN3
+Psensor => GenerateNextState.IN1
+Psensor => Selector2.IN4
+OnOff <= OnOff.DB_MAX_OUTPUT_PORT_TYPE
+clk => CurrentState~1.DATAIN
+rst => CurrentState~3.DATAIN
+Dout[0] <= Dout.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Din[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Din[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Din[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Din[4].DB_MAX_OUTPUT_PORT_TYPE
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+

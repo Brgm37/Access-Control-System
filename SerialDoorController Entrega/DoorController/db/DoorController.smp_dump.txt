@@ -1,0 +1,8 @@
+
+State Machine - |DoorController|CurrentState
+Name CurrentState.STATE_SENSOR_OPEN CurrentState.STATE_SENSOR CurrentState.STATE_CLOSE CurrentState.STATE_OPEN CurrentState.STATE_WAITING 
+CurrentState.STATE_WAITING 0 0 0 0 0 
+CurrentState.STATE_OPEN 0 0 0 1 1 
+CurrentState.STATE_CLOSE 0 0 1 0 1 
+CurrentState.STATE_SENSOR 0 1 0 0 1 
+CurrentState.STATE_SENSOR_OPEN 1 0 0 0 1 

@@ -1,0 +1,135 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+	entity serialReceiver_tb is
+	end serialReceiver_tb;
+	
+architecture serialReceiver_tb_arch of serialReceiver_tb is
+	
+	component serialReceiver
+		port (
+			SDX: in std_logic;
+			SCLK: in std_logic;
+			MCLK: in std_logic;
+			SS: in std_logic;
+			accept: in std_logic;
+			D: out std_logic_vector(4 downto 0);
+			DXval: out std_logic;
+			Rst: in std_logic
+		);
+	end component;
+	
+	constant MCLK_PERIOD : time := 20 ns;
+	constant MCLK_HALF_PERIOD : time := MCLK_PERIOD / 2;
+	
+	signal reset_tb : std_logic;
+	signal sclk_tb : std_logic;
+	signal mclk_tb : std_logic;
+	signal sSDX, sSS, saccept, sDXval: std_logic;
+	signal sD: std_logic_vector(4 downto 0);
+	
+	begin 
+	
+-- unit under Test 
+	
+	unit: serialReceiver 
+		port map(
+			SDX => sSDX,
+			sCLK => sclk_tb,
+			MCLK => mclk_tb,
+			SS => sSS,
+			accept => saccept,
+			D => sD,
+			DXval => sDXval,
+			Rst => reset_tb
+		);
+	
+
+	clk_gen1: process
+			begin
+				mclk_tb <= '0';
+				wait for MCLK_HALF_PERIOD; 
+				mclk_tb <= '1';
+				wait for MCLK_HALF_PERIOD;
+			end process;
+	
+	stimulus: process 
+	begin
+	
+		-- reset
+		reset_tb <= '1';
+		sSS <= '1';
+		sclk_tb <= '0';
+		saccept <= '0';
+		wait for MCLK_PERIOD*2;
+		
+		reset_tb <= '0';
+		
+		-- main loop
+		
+		-- state_receiving
+		
+		wait for MCLK_PERIOD*2;
+		
+		-- state waiting
+		-- data = 01011
+		
+		sSS <= '0';
+		ssDX <= '0';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '0';
+		ssDX <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '0';
+		ssDX <= '0';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '0';
+		ssDX <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb<= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '0';
+		ssDX <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '1';
+		
+		wait for MCLK_PERIOD;
+		
+		sclk_tb <= '0';
+		sSS <= '1';
+		
+		-- state_accepted
+		wait for MCLK_PERIOD*2;
+		saccept <= '1';
+		wait for MCLK_PERIOD*2;
+		-- state_receiving
+		
+		wait;
+	end process;
+
+
+end serialReceiver_tb_arch;

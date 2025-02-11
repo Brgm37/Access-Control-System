@@ -1,0 +1,107 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity memoryAdressControl is 
+	port (
+		putget: in std_logic;
+		Clk: in std_logic;
+		Rst: in std_logic;
+		incPut: in std_logic;
+		incGet: in std_logic;
+		full: out std_logic;
+		empty: out std_logic;
+		Aoutput: out std_logic_vector(2 downto 0)
+		); 
+end memoryAdressControl;
+architecture arq_memoryAdressControl of memoryAdressControl is
+
+component mux21 is
+	port(A: in std_logic_vector(2 downto 0);
+	B: in std_logic_vector(2 downto 0);
+	S: in std_logic;
+	M: out std_logic_vector(2 downto 0));
+end component;
+
+component AddSub3 is
+	port (
+		A : in std_logic_vector(2 downto 0);
+		B : in std_logic_vector(2 downto 0);
+		Op : in std_logic;
+		S : out std_logic_vector(2 downto 0)
+	);
+end component;
+
+component Registo3 is
+	port (
+		D : in std_logic_vector(2 downto 0);
+		En : in std_logic;
+		Rst : in std_logic;
+		Clk : in std_logic;
+		Q : out std_logic_vector(2 downto 0)
+	);
+end component;
+
+component ContadorCrescente is
+	port (
+		Rst : in std_logic;
+		CE : in std_logic;
+		Clk : in std_logic;
+		Q : out std_logic_vector(2 downto 0)
+	);
+end component;
+
+
+signal sV, sR, sGet, sPut: std_logic_vector(2 downto 0); 
+signal  sOr: std_logic;
+begin
+
+URegisto3: Registo3
+port map(
+		D => sV,
+		En => sOr,
+		Rst => Rst,
+		Clk => Clk, 
+		Q => sR
+);
+
+
+UAddSub3: AddSub3
+port map(
+		A => sR,
+		B => "001",
+		Op => incGet,
+		S => sV
+);
+
+UIDXGET: ContadorCrescente
+port map(
+		Rst =>  Rst, 
+		Clk => Clk,
+		CE => incGet,
+		Q => sGet
+);
+
+UIDXPUT: ContadorCrescente
+port map(
+		Rst =>  Rst, 
+		Clk => Clk,
+		CE => incPut,
+		Q => sPut
+);
+
+Umux21: mux21
+port map(
+		A => sGet,
+		B => sPut,
+		S => putget,
+		M => Aoutput
+);
+		
+
+sOr <= incPut or incGet;
+		
+full <= sR(0) and sR(1) and sR(2);
+empty <= (not sR(0)) and (not sR(1)) and (not sR(2));
+
+
+end architecture;

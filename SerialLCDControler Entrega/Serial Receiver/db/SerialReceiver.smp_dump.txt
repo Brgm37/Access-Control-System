@@ -1,0 +1,6 @@
+
+State Machine - |SerialReceiver|SerialControl:USerialControl|CurrentState
+Name CurrentState.STATE_ACCEPTED CurrentState.STATE_WAITING CurrentState.STATE_RECEIVING 
+CurrentState.STATE_RECEIVING 0 0 0 
+CurrentState.STATE_WAITING 0 1 1 
+CurrentState.STATE_ACCEPTED 1 0 1 

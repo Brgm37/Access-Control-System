@@ -1,0 +1,169 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do KeyBoardReader_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Registo3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:18 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Registo3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Registo3
+# -- Compiling architecture logic of Registo3
+# End time: 15:20:18 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/mux21.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:18 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/mux21.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture arq_mux21 of mux21
+# End time: 15:20:18 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:18 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity memoryAdressControl
+# -- Compiling architecture arq_memoryAdressControl of memoryAdressControl
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/HA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:19 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/HA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity HA
+# -- Compiling architecture logic of HA
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/FA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:19 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/FA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FA
+# -- Compiling architecture logic of FA
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Contador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:19 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Contador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Contador
+# -- Compiling architecture logic of Contador
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/AddSub3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:19 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/AddSub3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub3
+# -- Compiling architecture logic of AddSub3
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/RingBuffer/Adder3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:19 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/RingBuffer/Adder3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Adder3
+# -- Compiling architecture logic of Adder3
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/KeyScan/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:19 on Jun 02,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/KeyScan/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 15:20:19 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.memoryadresscontrol
+# vsim work.memoryadresscontrol 
+# Start time: 15:20:24 on Jun 02,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.memoryadresscontrol(arq_memoryadresscontrol)
+# Loading work.registo3(logic)
+# Loading work.ffd(logicfunction)
+# Loading work.addsub3(logic)
+# Loading work.adder3(logic)
+# Loading work.fa(logic)
+# Loading work.ha(logic)
+# Loading work.contador(logic)
+# Loading work.mux21(arq_mux21)
+# ** Warning: (vsim-8683) Uninitialized out port /memoryadresscontrol/UAddSub3/UAdder3/CO has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/memoryadresscontrol/incPut
+add wave -position insertpoint  \
+sim:/memoryadresscontrol/Aoutput \
+sim:/memoryadresscontrol/Clk \
+sim:/memoryadresscontrol/empty \
+sim:/memoryadresscontrol/full \
+sim:/memoryadresscontrol/incGet \
+sim:/memoryadresscontrol/incPut \
+sim:/memoryadresscontrol/putget \
+sim:/memoryadresscontrol/Rst \
+sim:/memoryadresscontrol/sGet \
+sim:/memoryadresscontrol/sOr \
+sim:/memoryadresscontrol/sPut \
+sim:/memoryadresscontrol/sR \
+sim:/memoryadresscontrol/sV
+add wave -position insertpoint  \
+sim:/memoryadresscontrol/UAddSub3/A
+add wave -position insertpoint  \
+sim:/memoryadresscontrol/UAddSub3/S
+add wave -position insertpoint  \
+sim:/memoryadresscontrol/UAddSub3/Op
+force -freeze sim:/memoryadresscontrol/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/memoryadresscontrol/incGet 0 0
+force -freeze sim:/memoryadresscontrol/incPut 1 0
+force -freeze sim:/memoryadresscontrol/putget 1 0
+force -freeze sim:/memoryadresscontrol/Rst 1 0
+run
+force -freeze sim:/memoryadresscontrol/Rst 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 15:37:14 on Jun 02,2023, Elapsed time: 0:16:50
+# Errors: 0, Warnings: 1

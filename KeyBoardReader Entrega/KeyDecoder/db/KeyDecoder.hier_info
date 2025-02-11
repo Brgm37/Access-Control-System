@@ -1,0 +1,138 @@
+|KeyDecoder
+Kact => KeyControl:UKeyControl.kack
+clk => KeyScan:UKeyScan.Clk
+clk => KeyControl:UKeyControl.clk
+rst => KeyScan:UKeyScan.rst
+rst => KeyControl:UKeyControl.rst
+Kval <= KeyControl:UKeyControl.kval
+K[0] <= KeyScan:UKeyScan.K[0]
+K[1] <= KeyScan:UKeyScan.K[1]
+K[2] <= KeyScan:UKeyScan.K[2]
+K[3] <= KeyScan:UKeyScan.K[3]
+Ln[0] => KeyScan:UKeyScan.Ln[0]
+Ln[1] => KeyScan:UKeyScan.Ln[1]
+Ln[2] => KeyScan:UKeyScan.Ln[2]
+Ln[3] => KeyScan:UKeyScan.Ln[3]
+Cl[0] <= KeyScan:UKeyScan.Cl[0]
+Cl[1] <= KeyScan:UKeyScan.Cl[1]
+Cl[2] <= KeyScan:UKeyScan.Cl[2]
+
+
+|KeyDecoder|KeyScan:UKeyScan
+Clk => Counter:UCounter.Clk
+Kscan => Counter:UCounter.Count_Enable
+Ln[0] => mux41:UMux.A
+Ln[1] => mux41:UMux.B
+Ln[2] => mux41:UMux.C
+Ln[3] => mux41:UMux.D
+rst => Counter:UCounter.Rst
+Cl[0] <= DEC:UDEC.I0
+Cl[1] <= DEC:UDEC.I1
+Cl[2] <= DEC:UDEC.I2
+K[0] <= Counter:UCounter.Q[0]
+K[1] <= Counter:UCounter.Q[1]
+K[2] <= Counter:UCounter.Q[2]
+K[3] <= Counter:UCounter.Q[3]
+Kpress <= mux41:UMux.M
+
+
+|KeyDecoder|KeyScan:UKeyScan|Counter:UCounter
+Clk => FFD:FF0.CLK
+Clk => FFD:FF1.CLK
+Clk => FFD:FF2.CLK
+Clk => FFD:FF3.CLK
+Rst => FFD:FF0.RESET
+Rst => FFD:FF1.RESET
+Rst => FFD:FF2.RESET
+Rst => FFD:FF3.RESET
+Q[0] <= FFD:FF0.Q
+Q[1] <= FFD:FF1.Q
+Q[2] <= FFD:FF2.Q
+Q[3] <= FFD:FF3.Q
+Count_Enable => FFD:FF0.EN
+Count_Enable => FFD:FF1.EN
+Count_Enable => FFD:FF2.EN
+Count_Enable => FFD:FF3.EN
+
+
+|KeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|KeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|KeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|KeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|KeyDecoder|KeyScan:UKeyScan|DEC:UDEC
+I0 <= I0.DB_MAX_OUTPUT_PORT_TYPE
+I1 <= I1.DB_MAX_OUTPUT_PORT_TYPE
+I2 <= I2.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => I1.IN0
+S[0] => I0.IN0
+S[0] => I2.IN0
+S[1] => I2.IN1
+S[1] => I0.IN1
+S[1] => I1.IN1
+
+
+|KeyDecoder|KeyScan:UKeyScan|Mux41:UMux
+A => M.IN0
+B => M.IN0
+C => M.IN0
+D => M.IN0
+S[0] => M.IN1
+S[0] => M.IN1
+S[0] => M.IN1
+S[0] => M.IN1
+S[1] => M.IN1
+S[1] => M.IN1
+S[1] => M.IN1
+S[1] => M.IN1
+M <= M.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|KeyDecoder|KeyControl:UKeyControl
+kack => Selector2.IN1
+kack => Selector1.IN1
+kpress => Selector1.IN2
+kpress => Selector2.IN2
+kpress => kscan.IN0
+kpress => Selector0.IN1
+kval <= kval.DB_MAX_OUTPUT_PORT_TYPE
+clk => CurrentState~1.DATAIN
+rst => CurrentState~3.DATAIN
+kscan <= kscan.DB_MAX_OUTPUT_PORT_TYPE
+
+

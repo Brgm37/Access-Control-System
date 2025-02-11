@@ -1,0 +1,207 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do SerialReceiver_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/ISEL/LIC/Serial Receiver/SerialControl.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:48:55 on Apr 23,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/Serial Receiver/SerialControl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SerialControl
+# -- Compiling architecture behavioral of SerialControl
+# End time: 15:48:55 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/Serial Receiver/CounterUpDown3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:48:55 on Apr 23,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/Serial Receiver/CounterUpDown3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ContadorUpDown3
+# -- Compiling architecture logic of ContadorUpDown3
+# End time: 15:48:55 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/Serial Receiver/shiftReg5.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:48:55 on Apr 23,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/Serial Receiver/shiftReg5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shiftReg5
+# -- Compiling architecture logic of shiftReg5
+# End time: 15:48:55 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:48:55 on Apr 23,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SerialReceiver
+# -- Compiling architecture logic of SerialReceiver
+# End time: 15:48:55 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/ISEL/LIC/Serial Receiver/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:48:55 on Apr 23,2023
+# vcom -reportprogress 300 -93 -work work C:/ISEL/LIC/Serial Receiver/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 15:48:55 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.shiftreg5
+# vsim work.shiftreg5 
+# Start time: 15:49:09 on Apr 23,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.shiftreg5(logic)
+# Loading work.ffd(logicfunction)
+add wave -position insertpoint  \
+sim:/shiftreg5/Clk \
+sim:/shiftreg5/En \
+sim:/shiftreg5/I \
+sim:/shiftreg5/O \
+sim:/shiftreg5/ffs \
+sim:/shiftreg5/rst
+force -freeze sim:/shiftreg5/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/shiftreg5/En 1 0
+force -freeze sim:/shiftreg5/I 1 0
+force -freeze sim:/shiftreg5/rst 1 0
+run
+force -freeze sim:/shiftreg5/rst 0 0
+run
+run
+restart
+force -freeze sim:/shiftreg5/rst 1 0
+force -freeze sim:/shiftreg5/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/shiftreg5/I 1 0
+force -freeze sim:/shiftreg5/En 1 0
+run
+force -freeze sim:/shiftreg5/rst 0 0
+run
+force -freeze sim:/shiftreg5/I 0 0
+run
+run
+force -freeze sim:/shiftreg5/I 1 0
+run
+run
+run
+vsim work.serialreceiver
+# End time: 15:58:33 on Apr 23,2023, Elapsed time: 0:09:24
+# Errors: 0, Warnings: 0
+# vsim work.serialreceiver 
+# Start time: 15:58:33 on Apr 23,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.serialreceiver(logic)
+# Loading work.contadorupdown3(logic)
+# Loading work.ffd(logicfunction)
+# Loading work.shiftreg5(logic)
+# Loading work.serialcontrol(behavioral)
+vcom -reportprogress 300 -work work {C:/ISEL/LIC/Serial Receiver/SerialReceiver_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:59:04 on Apr 23,2023
+# vcom -reportprogress 300 -work work C:/ISEL/LIC/Serial Receiver/SerialReceiver_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity serialReceiver_tb
+# -- Compiling architecture serialReceiver_tb_arch of serialReceiver_tb
+# End time: 15:59:04 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.serialreceiver_tb
+# End time: 15:59:11 on Apr 23,2023, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 0
+# vsim work.serialreceiver_tb 
+# Start time: 15:59:11 on Apr 23,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.serialreceiver_tb(serialreceiver_tb_arch)
+# Loading work.serialreceiver(logic)
+# ** Fatal: (vsim-3817) Port "not_SS" of entity "serialreceiver" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /serialreceiver_tb/unit File: C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd Line: 9
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 15:59:11 on Apr 23,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.serialreceiver_tb
+# vsim work.serialreceiver_tb 
+# Start time: 15:59:20 on Apr 23,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.serialreceiver_tb(serialreceiver_tb_arch)
+# Loading work.serialreceiver(logic)
+# ** Fatal: (vsim-3817) Port "not_SS" of entity "serialreceiver" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /serialreceiver_tb/unit File: C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd Line: 9
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 15:59:21 on Apr 23,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.serialreceiver
+# vsim work.serialreceiver 
+# Start time: 15:59:35 on Apr 23,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.serialreceiver(logic)
+# Loading work.contadorupdown3(logic)
+# Loading work.ffd(logicfunction)
+# Loading work.shiftreg5(logic)
+# Loading work.serialcontrol(behavioral)
+add wave -position insertpoint  \
+sim:/serialreceiver/D \
+sim:/serialreceiver/DXval \
+sim:/serialreceiver/MCLK \
+sim:/serialreceiver/SCLK \
+sim:/serialreceiver/SDX \
+sim:/serialreceiver/accept \
+sim:/serialreceiver/not_SS \
+sim:/serialreceiver/reset \
+sim:/serialreceiver/sclr \
+sim:/serialreceiver/seq5in \
+sim:/serialreceiver/seq5out \
+sim:/serialreceiver/swr
+force -freeze sim:/serialreceiver/MCLK 1 0, 0 {50 ps} -r 100
+force -freeze sim:/serialreceiver/SCLK 0 0
+force -freeze sim:/serialreceiver/not_SS 0 0
+force -freeze sim:/serialreceiver/reset 1 0
+force -freeze sim:/serialreceiver/SDX 1 0
+run
+force -freeze sim:/serialreceiver/accept 0 0
+force -freeze sim:/serialreceiver/reset 1 0
+run
+run
+force -freeze sim:/serialreceiver/SDX 0 0
+run
+force -freeze sim:/serialreceiver/SDX 1 0
+run
+force -freeze sim:/serialreceiver/SCLK 1 0
+run
+force -freeze sim:/serialreceiver/SDX 0 0
+force -freeze sim:/serialreceiver/SCLK 0 0
+run
+force -freeze sim:/serialreceiver/SCLK 1 0
+run
+# End time: 16:16:48 on Apr 23,2023, Elapsed time: 0:17:13
+# Errors: 0, Warnings: 0

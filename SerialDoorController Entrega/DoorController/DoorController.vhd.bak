@@ -1,0 +1,59 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Dispatcher is
+    port (
+		  Dval: in std_logic;
+        Din: in std_logic_vector(4 downto 0);
+        Sclose: in std_logic;
+        Sopen: in std_logic;
+        Psensor: in std_logic;
+        OnOff: out std_logic;
+        Dout: out std_logic_vector(4 downto 0);
+        done: out std_logic;
+    );
+end Dispatcher;
+
+architecture behavioral of Dispatcher is
+	type STATE_TYPE is (STATE_OPEN, STATE_WAITING, STATE_CLOSE, STATE_SENSOR);
+
+	signal CurrentState, NextState: STATE_TYPE;
+	signal sWrl : std_logic;
+
+	begin
+--		Flip-Flop's
+		CurrentState <= STATE_WAITING when rst = '1' else Nextstate when rising_edge(clk);
+		
+--		Generate Next State 
+		GenerateNextState:
+			process (CurrentState, Dval, sWrl) 
+				begin
+					case CurrentState is
+						when STATE_WAITING		=> if(Dval = '1' and OC = '1') then
+																NextState <= STATE_OPEN;
+															else if (Dval = '1' and OC = '0')
+																NextState <= STATE_CLOSE;
+															else
+																NextState <= STATE_WAITING;
+															end if;
+						when STATE_OPEN			=> if(Sopen = '1') then
+																NextState <= STATE_WAITING;
+															else
+																NextState <= STATE_OPEN;
+															end if;
+						when STATE_CLOSE			=> if(Sclose = '1') then
+																NextState <= STATE_WAITING;
+															else if (Sclose = '0' and Psensor = '1')
+																NextState <= STATE_SENSOR;
+															else
+																NextState <= STATE_CLOSE;
+															end if;
+					end case;
+			end process;
+			
+--		Generate Outputs
+		OnOff<= '1' when (CurrentState = STATE_OPEN or CurrentState = STATE_CLOSE or CurrentState = STATE_SENSOR) else '0';
+		done <= '1' when ((CurrentState = STATE_OPEN and Sopen = '1') or (CurrentState = STATE_CLOSE and Sclose = '1')) else '0';
+		Dout(3 downto 0) <= Din(3 downto 0);
+		Dout(4) <= '1' when ( CurrentState = STATE_OPEN or CurrentState = STATE_SENSOR) else '0';
+end architecture;

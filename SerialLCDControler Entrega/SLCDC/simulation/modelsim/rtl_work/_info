@@ -1,0 +1,322 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ISEL/LIC/SLCDC/simulation/modelsim
+Econtadorupdown3
+Z1 w1680603751
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/ISEL/LIC/Serial Receiver/CounterUpDown3.vhd
+Z5 FC:/ISEL/LIC/Serial Receiver/CounterUpDown3.vhd
+l0
+L4
+VZAz_;ARNf5EZRZhG<2Xno2
+!s100 :BX<S@2dMEN?lJ?=TRTYz3
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1681804174
+!i10b 1
+Z8 !s108 1681804174.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/Serial Receiver/CounterUpDown3.vhd|
+Z10 !s107 C:/ISEL/LIC/Serial Receiver/CounterUpDown3.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Alogic
+R2
+R3
+DEx4 work 15 contadorupdown3 0 22 ZAz_;ARNf5EZRZhG<2Xno2
+l31
+L16
+VcFUIFo8ckPV3=2@E9F0MS2
+!s100 m2G<O0Hn;aLBI]7k4oI;z3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edispatcher
+Z13 w1681203435
+R2
+R3
+R0
+Z14 8C:/ISEL/LIC/Dispatcher/Dispatcher.vhd
+Z15 FC:/ISEL/LIC/Dispatcher/Dispatcher.vhd
+l0
+L4
+V899DS:`53njE=QW_1]<bJ2
+!s100 X^hi]big]2mf5U5DTECZ32
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/Dispatcher/Dispatcher.vhd|
+Z17 !s107 C:/ISEL/LIC/Dispatcher/Dispatcher.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 10 dispatcher 0 22 899DS:`53njE=QW_1]<bJ2
+l22
+L16
+V8Q_]3mB`R2OBXfW0V::H^0
+!s100 0ISD51@zg7l?WUcPT8zic1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Effd
+Z18 w1680604338
+R2
+R3
+R0
+Z19 8C:/ISEL/LIC/Serial Receiver/FFD.vhd
+Z20 FC:/ISEL/LIC/Serial Receiver/FFD.vhd
+l0
+L4
+VlLnJhUY99`]7^:0M0ZT@z3
+!s100 7zIA7N0c8k?G4DH:]Q7>;3
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/Serial Receiver/FFD.vhd|
+Z22 !s107 C:/ISEL/LIC/Serial Receiver/FFD.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 ffd 0 22 lLnJhUY99`]7^:0M0ZT@z3
+l16
+L14
+VXLGJhA0YLNkWk3eiz=LFX0
+!s100 EbhLHDh93W5h:OfQP8>M81
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Eserialcontrol
+Z23 w1681803806
+R2
+R3
+R0
+Z24 8C:/ISEL/LIC/Serial Receiver/SerialControl.vhd
+Z25 FC:/ISEL/LIC/Serial Receiver/SerialControl.vhd
+l0
+L4
+VQ=jPlRRd[7[k6aoTeFeN?1
+!s100 b1__7OVEQl7Vz3O_=>21m3
+R6
+31
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/Serial Receiver/SerialControl.vhd|
+Z27 !s107 C:/ISEL/LIC/Serial Receiver/SerialControl.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 13 serialcontrol 0 22 Q=jPlRRd[7[k6aoTeFeN?1
+l22
+L17
+VdUU12>5oCHD9<V[W]07Lo0
+!s100 dFY?^gE_5H`U9QkL_TgTX3
+R6
+31
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12
+Eserialreceiver
+Z28 w1680604482
+R2
+R3
+R0
+Z29 8C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd
+Z30 FC:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd
+l0
+L4
+Ve_Y@L62lLXZc6GF6jNi9Q1
+!s100 l^]EUD5UWj]@36lbaP^UU0
+R6
+31
+R7
+!i10b 1
+R8
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd|
+Z32 !s107 C:/ISEL/LIC/Serial Receiver/SerialReceiver.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 14 serialreceiver 0 22 e_Y@L62lLXZc6GF6jNi9Q1
+l50
+L16
+V>J`]SHfKb`M>M?a>fRLHe3
+!s100 6_Yk?d65HO=YPkD:NSfD31
+R6
+31
+R7
+!i10b 1
+R8
+R31
+R32
+!i113 1
+R11
+R12
+Eshiftreg5
+Z33 w1680603786
+R2
+R3
+R0
+Z34 8C:/ISEL/LIC/Serial Receiver/shiftReg5.vhd
+Z35 FC:/ISEL/LIC/Serial Receiver/shiftReg5.vhd
+l0
+L4
+V3<?Eo>=:2k]WA@UXZ3MPA0
+!s100 4DdHD=jW>i0a?=G76WJj82
+R6
+31
+R7
+!i10b 1
+R8
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/Serial Receiver/shiftReg5.vhd|
+Z37 !s107 C:/ISEL/LIC/Serial Receiver/shiftReg5.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 9 shiftreg5 0 22 3<?Eo>=:2k]WA@UXZ3MPA0
+l34
+L14
+V2AK<VY:A;c=^][D@_QgcN2
+!s100 e1>2a1LBY2kfCfzECzAn>1
+R6
+31
+R7
+!i10b 1
+R8
+R36
+R37
+!i113 1
+R11
+R12
+Eslcdc
+Z38 w1681205031
+R2
+R3
+R0
+Z39 8C:/ISEL/LIC/SLCDC/SLCDC.vhd
+Z40 FC:/ISEL/LIC/SLCDC/SLCDC.vhd
+l0
+L4
+V`]e4jPk`V;MbnBZ6c3O=M3
+!s100 Zl3QVJ;FiYKNR4VehO`>Y2
+R6
+31
+R7
+!i10b 1
+R8
+Z41 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/SLCDC/SLCDC.vhd|
+Z42 !s107 C:/ISEL/LIC/SLCDC/SLCDC.vhd|
+!i113 1
+R11
+R12
+Alogic
+R2
+R3
+DEx4 work 5 slcdc 0 22 `]e4jPk`V;MbnBZ6c3O=M3
+l43
+L15
+VCbN1:Wzo0g@a9nWQ5;?<02
+!s100 0hZO?31<DNHdPUUG40:ze1
+R6
+31
+R7
+!i10b 1
+R8
+R41
+R42
+!i113 1
+R11
+R12
+Eslcdc_tb
+Z43 w1681208904
+R2
+R3
+R0
+Z44 8C:/ISEL/LIC/SLCDC/SLCDC_tb.vhd
+Z45 FC:/ISEL/LIC/SLCDC/SLCDC_tb.vhd
+l0
+L4
+VC1;GPQmN^@RK_Dg3GZ3nh0
+!s100 FEPWi5o_ToP9BCY?4W[<:0
+R6
+32
+Z46 !s110 1681804214
+!i10b 1
+Z47 !s108 1681804214.000000
+Z48 !s90 -reportprogress|300|-work|work|C:/ISEL/LIC/SLCDC/SLCDC_tb.vhd|
+Z49 !s107 C:/ISEL/LIC/SLCDC/SLCDC_tb.vhd|
+!i113 1
+Z50 o-work work
+R12
+Abehavioral
+R2
+R3
+DEx4 work 8 slcdc_tb 0 22 C1;GPQmN^@RK_Dg3GZ3nh0
+l31
+L7
+VMokLfLA]UYnh8cO=OPTE82
+!s100 o7kACeo<C>Ld8bL[ofVLA2
+R6
+32
+R46
+!i10b 1
+R47
+R48
+R49
+!i113 1
+R50
+R12

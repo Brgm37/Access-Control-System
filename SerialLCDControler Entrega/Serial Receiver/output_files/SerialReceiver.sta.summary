@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'SCLK'
+Slack : -0.868
+TNS   : -4.385
+
+Type  : Slow 1200mV 85C Model Setup 'MCLK'
+Slack : -0.495
+TNS   : -1.107
+
+Type  : Slow 1200mV 85C Model Hold 'MCLK'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SCLK'
+Slack : 0.324
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'SCLK'
+Slack : -0.467
+TNS   : -1.401
+
+Type  : Slow 1200mV 85C Model Removal 'SCLK'
+Slack : 0.870
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCLK'
+Slack : -3.000
+TNS   : -12.776
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MCLK'
+Slack : -3.000
+TNS   : -6.666
+
+Type  : Slow 1200mV 0C Model Setup 'SCLK'
+Slack : -0.709
+TNS   : -3.545
+
+Type  : Slow 1200mV 0C Model Setup 'MCLK'
+Slack : -0.349
+TNS   : -0.725
+
+Type  : Slow 1200mV 0C Model Hold 'MCLK'
+Slack : 0.294
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SCLK'
+Slack : 0.294
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'SCLK'
+Slack : -0.347
+TNS   : -1.041
+
+Type  : Slow 1200mV 0C Model Removal 'SCLK'
+Slack : 0.809
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCLK'
+Slack : -3.000
+TNS   : -12.776
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MCLK'
+Slack : -3.000
+TNS   : -6.666
+
+Type  : Fast 1200mV 0C Model Setup 'SCLK'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'MCLK'
+Slack : 0.255
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MCLK'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SCLK'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'SCLK'
+Slack : 0.275
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'SCLK'
+Slack : 0.367
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCLK'
+Slack : -3.000
+TNS   : -11.192
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MCLK'
+Slack : -3.000
+TNS   : -6.081
+
+------------------------------------------------------------

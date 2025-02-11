@@ -1,0 +1,394 @@
+|RingBuffer
+D[0] => RAM:Uram.din[0]
+D[1] => RAM:Uram.din[1]
+D[2] => RAM:Uram.din[2]
+D[3] => RAM:Uram.din[3]
+Q[0] << RAM:Uram.dout[0]
+Q[1] << RAM:Uram.dout[1]
+Q[2] << RAM:Uram.dout[2]
+Q[3] << RAM:Uram.dout[3]
+CTS => RingBufferControl:URingBufferControl.CTS
+clk => RingBufferControl:URingBufferControl.clk
+clk => memoryAdressControl:UmemoryAdressControl.Clk
+rst => RingBufferControl:URingBufferControl.rst
+rst => memoryAdressControl:UmemoryAdressControl.Rst
+DAV => RingBufferControl:URingBufferControl.Dav
+Wreg << RingBufferControl:URingBufferControl.Wreg
+DAC << RingBufferControl:URingBufferControl.Dac
+
+
+|RingBuffer|RingBufferControl:URingBufferControl
+Dav => NextState.OUTPUTSELECT
+Dav => NextState.OUTPUTSELECT
+Dav => NextState.OUTPUTSELECT
+Dav => Selector2.IN3
+Dav => NextState.STATE_INCPUT.DATAB
+CTS => GenerateNextState.IN0
+CTS => Selector1.IN3
+CTS => NextState.STATE_INCGET.DATAB
+full => NextState.OUTPUTSELECT
+full => NextState.OUTPUTSELECT
+full => NextState.DATAB
+clk => CurrentState~1.DATAIN
+empty => GenerateNextState.IN1
+rst => CurrentState~3.DATAIN
+incPut <= incPut.DB_MAX_OUTPUT_PORT_TYPE
+incGet <= incGet.DB_MAX_OUTPUT_PORT_TYPE
+Dac <= Dac.DB_MAX_OUTPUT_PORT_TYPE
+Wr <= Wr.DB_MAX_OUTPUT_PORT_TYPE
+selPG <= selPG.DB_MAX_OUTPUT_PORT_TYPE
+Wreg <= Wreg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl
+putget => mux21:Umux21.S
+Clk => Registo3:URegisto3.Clk
+Clk => Contador:UIDXGET.Clk
+Clk => Contador:UIDXPUT.Clk
+Rst => Registo3:URegisto3.Rst
+Rst => Contador:UIDXGET.Rst
+Rst => Contador:UIDXPUT.Rst
+incPut => sOr.IN0
+incPut => Contador:UIDXPUT.Count_Enable
+incGet => sOr.IN1
+incGet => AddSub3:UAddSub3.Op
+incGet => Contador:UIDXGET.Count_Enable
+full <= full.DB_MAX_OUTPUT_PORT_TYPE
+empty <= empty.DB_MAX_OUTPUT_PORT_TYPE
+Aoutput[0] <= mux21:Umux21.M[0]
+Aoutput[1] <= mux21:Umux21.M[1]
+Aoutput[2] <= mux21:Umux21.M[2]
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3
+D[0] => FFD:U0FFD.D
+D[1] => FFD:U1FFD.D
+D[2] => FFD:U2FFD.D
+D[3] => FFD:U3FFD.D
+En => FFD:U0FFD.EN
+En => FFD:U1FFD.EN
+En => FFD:U2FFD.EN
+En => FFD:U3FFD.EN
+Rst => FFD:U0FFD.RESET
+Rst => FFD:U1FFD.RESET
+Rst => FFD:U2FFD.RESET
+Rst => FFD:U3FFD.RESET
+Clk => FFD:U0FFD.CLK
+Clk => FFD:U1FFD.CLK
+Clk => FFD:U2FFD.CLK
+Clk => FFD:U3FFD.CLK
+Q[0] <= FFD:U0FFD.Q
+Q[1] <= FFD:U1FFD.Q
+Q[2] <= FFD:U2FFD.Q
+Q[3] <= FFD:U3FFD.Q
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U0FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U1FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U2FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U3FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3
+A[0] => Adder3:UAdder3.A[0]
+A[1] => Adder3:UAdder3.A[1]
+A[2] => Adder3:UAdder3.A[2]
+A[3] => Adder3:UAdder3.A[3]
+B[0] => sNotB[0].IN0
+B[1] => sNotB[1].IN0
+B[2] => sNotB[2].IN0
+B[3] => sNotB[3].IN0
+Op => sNotB[0].IN1
+Op => sNotB[1].IN1
+Op => sNotB[2].IN1
+Op => sNotB[3].IN1
+Op => COBO.IN1
+Op => Adder3:UAdder3.CI
+S[0] <= Adder3:UAdder3.S[0]
+S[1] <= Adder3:UAdder3.S[1]
+S[2] <= Adder3:UAdder3.S[2]
+S[3] <= Adder3:UAdder3.S[3]
+COBO <= COBO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3
+A[0] => FA:FA0.A
+A[1] => FA:FA1.A
+A[2] => FA:FA2.A
+A[3] => FA:FA3.A
+B[0] => FA:FA0.B
+B[1] => FA:FA1.B
+B[2] => FA:FA2.B
+B[3] => FA:FA3.B
+CI => FA:FA0.CI
+S[0] <= FA:FA0.S
+S[1] <= FA:FA1.S
+S[2] <= FA:FA2.S
+S[3] <= FA:FA3.S
+CO <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA0
+A => HA:HA0.A
+B => HA:HA0.B
+CI => HA:HA1.A
+S <= HA:HA1.S
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA0|HA:HA0
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA0|HA:HA1
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA1
+A => HA:HA0.A
+B => HA:HA0.B
+CI => HA:HA1.A
+S <= HA:HA1.S
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA1|HA:HA0
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA1|HA:HA1
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA2
+A => HA:HA0.A
+B => HA:HA0.B
+CI => HA:HA1.A
+S <= HA:HA1.S
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA2|HA:HA0
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA2|HA:HA1
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3
+A => HA:HA0.A
+B => HA:HA0.B
+CI => HA:HA1.A
+S <= HA:HA1.S
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3|HA:HA0
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3|HA:HA1
+A => S.IN0
+A => CO.IN0
+B => S.IN1
+B => CO.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CO <= CO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET
+Clk => FFD:FF0.CLK
+Clk => FFD:FF1.CLK
+Clk => FFD:FF2.CLK
+Rst => FFD:FF0.RESET
+Rst => FFD:FF1.RESET
+Rst => FFD:FF2.RESET
+Q[0] <= FFD:FF0.Q
+Q[1] <= FFD:FF1.Q
+Q[2] <= FFD:FF2.Q
+Count_Enable => FFD:FF0.EN
+Count_Enable => FFD:FF1.EN
+Count_Enable => FFD:FF2.EN
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT
+Clk => FFD:FF0.CLK
+Clk => FFD:FF1.CLK
+Clk => FFD:FF2.CLK
+Rst => FFD:FF0.RESET
+Rst => FFD:FF1.RESET
+Rst => FFD:FF2.RESET
+Q[0] <= FFD:FF0.Q
+Q[1] <= FFD:FF1.Q
+Q[2] <= FFD:FF2.Q
+Count_Enable => FFD:FF0.EN
+Count_Enable => FFD:FF1.EN
+Count_Enable => FFD:FF2.EN
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT|FFD:FF0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT|FFD:FF1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT|FFD:FF2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|memoryAdressControl:UmemoryAdressControl|mux21:Umux21
+A[0] => M.IN0
+A[1] => M.IN0
+A[2] => M.IN0
+B[0] => M.IN0
+B[1] => M.IN0
+B[2] => M.IN0
+S => M.IN1
+S => M.IN1
+S => M.IN1
+S => M.IN1
+S => M.IN1
+S => M.IN1
+M[0] <= M.DB_MAX_OUTPUT_PORT_TYPE
+M[1] <= M.DB_MAX_OUTPUT_PORT_TYPE
+M[2] <= M.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RingBuffer|RAM:Uram
+address[0] => ram.RADDR
+address[0] => ram.WADDR
+address[1] => ram.RADDR1
+address[1] => ram.WADDR1
+address[2] => ram.RADDR2
+address[2] => ram.WADDR2
+wr => ram.WE
+din[0] => ram.DATAIN
+din[1] => ram.DATAIN1
+din[2] => ram.DATAIN2
+din[3] => ram.DATAIN3
+dout[0] <= ram.DATAOUT
+dout[1] <= ram.DATAOUT1
+dout[2] <= ram.DATAOUT2
+dout[3] <= ram.DATAOUT3
+
+

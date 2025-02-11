@@ -1,0 +1,58 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity AccessControlSystem is
+	port(
+		clk: in std_logic;
+		rst: in std_logic;
+		Ln: in std_logic_vector(3 downto 0);
+		Cl: out std_logic_vector(2 downto 0)
+	);
+end AccessControlSystem;
+
+architecture logic of AccessControlSystem is
+
+	component KeyBoardReader is
+       port (
+            Kact: in std_logic;
+				Q: out std_logic_vector(3 downto 0);
+				Ln: in std_logic_vector(3 downto 0); -- line
+				Cl: out std_logic_vector(2 downto 0); -- column
+				rst: in std_logic;
+				Kval: out std_logic;
+				clk: in std_logic
+		);
+   end component;
+	
+	component usbport is
+		port(
+			inputPort:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+			outputPort :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+		);
+	end component;
+	
+	signal sInput: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal sOutput: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	begin 
+--		KeyBoardReader
+		UKeyBoardReader: KeyBoardReader
+			port map(
+				Clk => clk,
+				Kact: sOut[4],
+				Q => sInput( 3 downto 0),
+				Ln => Ln,
+				Cl => Cl,
+				rst => rst
+				Kval => sInput[4]
+			);
+--		UsbPort
+		Uusbport: usbport
+			port map(
+				inputPort => sInput,
+				outputPort <= sOutput
+			);
+			
+			sInput(7 downto 5) <= "000" 
+			
+end architecture;

@@ -1,0 +1,168 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ISEL/LIC/OutputBuffer/simulation/modelsim
+Ebuffercontrol
+Z1 w1685697318
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/ISEL/LIC/OutputBuffer/BufferControl.vhd
+Z6 FC:/ISEL/LIC/OutputBuffer/BufferControl.vhd
+l0
+L5
+V_29I7S7T`0E2LK5BM>RT]1
+!s100 URbA[^@DflU>OJo3GzBjc1
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1685697445
+!i10b 1
+Z9 !s108 1685697445.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/OutputBuffer/BufferControl.vhd|
+Z11 !s107 C:/ISEL/LIC/OutputBuffer/BufferControl.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+DEx4 work 13 buffercontrol 0 22 _29I7S7T`0E2LK5BM>RT]1
+l22
+L17
+VR^71=QJ;?TD=KkE?La1zS2
+!s100 0Ym8[R<9G7cT93085U[0a3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Effd
+Z14 w1684232224
+R3
+R4
+R0
+Z15 8C:/ISEL/LIC/OutputBuffer/FFD.vhd
+Z16 FC:/ISEL/LIC/OutputBuffer/FFD.vhd
+l0
+L4
+VOIef=XXf5bmM0oP7:YlDA1
+!s100 ;G[_lheIEIhOzWm2=eac30
+R7
+31
+Z17 !s110 1685697446
+!i10b 1
+Z18 !s108 1685697446.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/OutputBuffer/FFD.vhd|
+Z20 !s107 C:/ISEL/LIC/OutputBuffer/FFD.vhd|
+!i113 1
+R12
+R13
+Alogicfunction
+R3
+R4
+DEx4 work 3 ffd 0 22 OIef=XXf5bmM0oP7:YlDA1
+l16
+L14
+VXLGJhA0YLNkWk3eiz=LFX0
+!s100 EbhLHDh93W5h:OfQP8>M81
+R7
+31
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Eoutputbuffer
+Z21 w1684232116
+R3
+R4
+R0
+Z22 8C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd
+Z23 FC:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd
+l0
+L4
+V??XC0nRz0Cf14i?eeH;Y]1
+!s100 2<GEkf7XZ5Q=H_fIYdOSL1
+R7
+31
+R17
+!i10b 1
+R18
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd|
+Z25 !s107 C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd|
+!i113 1
+R12
+R13
+Aoutputbuffer_arq
+R3
+R4
+DEx4 work 12 outputbuffer 0 22 ??XC0nRz0Cf14i?eeH;Y]1
+l44
+L17
+VQ?HRn6IhTK8FFOBK<g6@M3
+!s100 lolPa@8Zc_?13cYWLXm8O0
+R7
+31
+R17
+!i10b 1
+R18
+R24
+R25
+!i113 1
+R12
+R13
+Eregisto4
+Z26 w1684232167
+R3
+R4
+R0
+Z27 8C:/ISEL/LIC/OutputBuffer/Registo4.vhd
+Z28 FC:/ISEL/LIC/OutputBuffer/Registo4.vhd
+l0
+L4
+V7c<Vb2VP;4E[:i=?d7Ah:1
+!s100 X5ETbzCN78_3lmLNVR5Fl0
+R7
+31
+R17
+!i10b 1
+R18
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/ISEL/LIC/OutputBuffer/Registo4.vhd|
+Z30 !s107 C:/ISEL/LIC/OutputBuffer/Registo4.vhd|
+!i113 1
+R12
+R13
+Alogic
+R3
+R4
+DEx4 work 8 registo4 0 22 7c<Vb2VP;4E[:i=?d7Ah:1
+l26
+L14
+VNRkWZ3O3A2FPOkWoen@M=1
+!s100 A>GPXf@hK?`ZML>zM3U1M1
+R7
+31
+R17
+!i10b 1
+R18
+R29
+R30
+!i113 1
+R12
+R13

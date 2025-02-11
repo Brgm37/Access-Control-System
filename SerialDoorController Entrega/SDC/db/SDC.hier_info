@@ -1,0 +1,206 @@
+|SDC
+not_SS => serialReceiverDC:USerialReceiver.SS
+SCLK => serialReceiverDC:USerialReceiver.SCLK
+SCLK => DoorController:UDispatcher.clk
+SDX => serialReceiverDC:USerialReceiver.SDX
+MCLK => serialReceiverDC:USerialReceiver.MCLK
+busy << serialReceiverDC:USerialReceiver.busy
+Sclose => DoorController:UDispatcher.Sclose
+Sopen => DoorController:UDispatcher.Sopen
+Psensor => DoorController:UDispatcher.Psensor
+OnOff << DoorController:UDispatcher.OnOff
+rst => serialReceiverDC:USerialReceiver.rst
+rst => DoorController:UDispatcher.rst
+Dout[0] << DoorController:UDispatcher.Dout[0]
+Dout[1] << DoorController:UDispatcher.Dout[1]
+Dout[2] << DoorController:UDispatcher.Dout[2]
+Dout[3] << DoorController:UDispatcher.Dout[3]
+Dout[4] << DoorController:UDispatcher.Dout[4]
+
+
+|SDC|serialReceiverDC:USerialReceiver
+SDX => shiftReg5:shiftReg51.I
+MCLK => serialControl:serialControl1.clk
+sCLK => ContadorUpDown3:counter1.Clk
+sCLK => shiftReg5:shiftReg51.Clk
+SS => serialControl:serialControl1.enRx
+accept => serialControl:serialControl1.accept
+D[0] <= shiftReg5:shiftReg51.O[0]
+D[1] <= shiftReg5:shiftReg51.O[1]
+D[2] <= shiftReg5:shiftReg51.O[2]
+D[3] <= shiftReg5:shiftReg51.O[3]
+D[4] <= shiftReg5:shiftReg51.O[4]
+DXval <= serialControl:serialControl1.DXval
+Rst => serialControl:serialControl1.rst
+Rst => shiftReg5:shiftReg51.rst
+busy <= serialControl:serialControl1.busy
+
+
+|SDC|serialReceiverDC:USerialReceiver|SerialControl:serialControl1
+clk => CurrentState~1.DATAIN
+enRx => Selector0.IN1
+enRx => Selector1.IN1
+accept => Selector0.IN2
+accept => Selector2.IN1
+clr <= clr.DB_MAX_OUTPUT_PORT_TYPE
+busy <= busy.DB_MAX_OUTPUT_PORT_TYPE
+wr <= wr.DB_MAX_OUTPUT_PORT_TYPE
+rst => CurrentState~3.DATAIN
+DXval <= DXval.DB_MAX_OUTPUT_PORT_TYPE
+eq5 => Selector2.IN2
+eq5 => wr.IN0
+eq5 => Selector1.IN2
+counterRst <= counterRst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|ContadorUpDown3:counter1
+Clk => FFD:FF0.CLK
+Clk => FFD:FF1.CLK
+Clk => FFD:FF2.CLK
+Rst => FFD:FF0.RESET
+Rst => FFD:FF1.RESET
+Rst => FFD:FF2.RESET
+Q[0] <= FFD:FF0.Q
+Q[1] <= FFD:FF1.Q
+Q[2] <= FFD:FF2.Q
+
+
+|SDC|serialReceiverDC:USerialReceiver|ContadorUpDown3:counter1|FFD:FF0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|ContadorUpDown3:counter1|FFD:FF1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|ContadorUpDown3:counter1|FFD:FF2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|shiftReg5:shiftReg51
+Clk => FFD:FF0.CLK
+Clk => FFD:FF1.CLK
+Clk => FFD:FF2.CLK
+Clk => FFD:FF3.CLK
+Clk => FFD:FF4.CLK
+I => FFD:FF0.D
+En => FFD:FF0.EN
+En => FFD:FF1.EN
+En => FFD:FF2.EN
+En => FFD:FF3.EN
+En => FFD:FF4.EN
+rst => FFD:FF0.RESET
+rst => FFD:FF1.RESET
+rst => FFD:FF2.RESET
+rst => FFD:FF3.RESET
+rst => FFD:FF4.RESET
+O[0] <= FFD:FF0.Q
+O[1] <= FFD:FF1.Q
+O[2] <= FFD:FF2.Q
+O[3] <= FFD:FF3.Q
+O[4] <= FFD:FF4.Q
+
+
+|SDC|serialReceiverDC:USerialReceiver|shiftReg5:shiftReg51|FFD:FF0
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|shiftReg5:shiftReg51|FFD:FF1
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|shiftReg5:shiftReg51|FFD:FF2
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|shiftReg5:shiftReg51|FFD:FF3
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|serialReceiverDC:USerialReceiver|shiftReg5:shiftReg51|FFD:FF4
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SDC|DoorController:UDispatcher
+Dval => GenerateNextState.IN0
+Dval => GenerateNextState.IN0
+Din[0] => GenerateNextState.IN1
+Din[0] => GenerateNextState.IN1
+Din[1] => Dout[1].DATAIN
+Din[2] => Dout[2].DATAIN
+Din[3] => Dout[3].DATAIN
+Din[4] => Dout[4].DATAIN
+Sclose => done.IN0
+Sclose => GenerateNextState.IN0
+Sclose => GenerateNextState.IN0
+Sopen => NextState.DATAA
+Sopen => Selector1.IN4
+Sopen => done.IN0
+Sopen => Selector0.IN2
+Sopen => NextState.DATAA
+Psensor => GenerateNextState.IN1
+Psensor => Selector4.IN3
+Psensor => NextState.OUTPUTSELECT
+Psensor => NextState.OUTPUTSELECT
+Psensor => Selector2.IN3
+Psensor => GenerateNextState.IN1
+Psensor => Selector2.IN4
+OnOff <= OnOff.DB_MAX_OUTPUT_PORT_TYPE
+clk => CurrentState~1.DATAIN
+rst => CurrentState~3.DATAIN
+Dout[0] <= Dout.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Din[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Din[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Din[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Din[4].DB_MAX_OUTPUT_PORT_TYPE
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+

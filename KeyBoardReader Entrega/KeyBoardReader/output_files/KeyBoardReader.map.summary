@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Jun 02 15:31:16 2023
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : KeyBoardReader
+Top-level Entity Name : KeyBoardReader
+Family : MAX 10
+Total logic elements : 303
+    Total combinational functions : 277
+    Dedicated logic registers : 152
+Total registers : 152
+Total pins : 19
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

@@ -1,0 +1,94 @@
+|OutputBuffer
+load => BufferControl:UBufferControl.load
+D[0] => Registo4:UOutputRegister.D[0]
+D[1] => Registo4:UOutputRegister.D[1]
+D[2] => Registo4:UOutputRegister.D[2]
+D[3] => Registo4:UOutputRegister.D[3]
+ACK => BufferControl:UBufferControl.ACK
+OBfree << BufferControl:UBufferControl.OBfree
+Dval << BufferControl:UBufferControl.Dval
+clk => BufferControl:UBufferControl.clk
+rst => BufferControl:UBufferControl.rst
+rst => Registo4:UOutputRegister.Rst
+Q[0] << Registo4:UOutputRegister.Q[0]
+Q[1] << Registo4:UOutputRegister.Q[1]
+Q[2] << Registo4:UOutputRegister.Q[2]
+Q[3] << Registo4:UOutputRegister.Q[3]
+
+
+|OutputBuffer|BufferControl:UBufferControl
+rst => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+load => NextState.STATE_WR.DATAB
+load => Selector0.IN1
+ACK => NextState.STATE_PULSING.DATAB
+ACK => Selector0.IN2
+ACK => Selector1.IN2
+OBfree <= OBfree.DB_MAX_OUTPUT_PORT_TYPE
+Dval <= Dval.DB_MAX_OUTPUT_PORT_TYPE
+Wreg <= Wreg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|OutputBuffer|Registo4:UOutputRegister
+D[0] => FFD:U0FFD.D
+D[1] => FFD:U1FFD.D
+D[2] => FFD:U2FFD.D
+D[3] => FFD:U3FFD.D
+En => FFD:U0FFD.EN
+En => FFD:U1FFD.EN
+En => FFD:U2FFD.EN
+En => FFD:U3FFD.EN
+Rst => FFD:U0FFD.RESET
+Rst => FFD:U1FFD.RESET
+Rst => FFD:U2FFD.RESET
+Rst => FFD:U3FFD.RESET
+Clk => FFD:U0FFD.CLK
+Clk => FFD:U1FFD.CLK
+Clk => FFD:U2FFD.CLK
+Clk => FFD:U3FFD.CLK
+Q[0] <= FFD:U0FFD.Q
+Q[1] <= FFD:U1FFD.Q
+Q[2] <= FFD:U2FFD.Q
+Q[3] <= FFD:U3FFD.Q
+
+
+|OutputBuffer|Registo4:UOutputRegister|FFD:U0FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|OutputBuffer|Registo4:UOutputRegister|FFD:U1FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|OutputBuffer|Registo4:UOutputRegister|FFD:U2FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|OutputBuffer|Registo4:UOutputRegister|FFD:U3FFD
+CLK => Q~reg0.CLK
+RESET => Q~reg0.ACLR
+RESET => Q.IN0
+SET => Q.IN1
+D => Q~reg0.DATAIN
+EN => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

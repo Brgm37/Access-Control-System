@@ -1,0 +1,97 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+-- Entity
+
+entity serialReceiverDC is
+	port (
+		SDX: in std_logic;
+		MCLK: in std_logic;
+		sCLK: in std_logic;
+		SS: in std_logic;
+		accept: in std_logic;
+		D: out std_logic_vector(4 downto 0);
+		DXval: out std_logic;
+		Rst: in std_logic;
+		busy: out std_logic
+	);
+end serialReceiverDC;
+
+-- Architecture
+
+architecture serialReceiver_arch of serialReceiverDC is
+
+	-- components
+
+	component serialControl
+		port (
+			clk: in std_logic;
+			enRx: in std_logic;
+			accept: in std_logic;
+			clr: out std_logic;
+			wr: out std_logic;
+			rst: in std_logic;
+			DXval: out std_logic;
+			eq5: in std_logic;
+			busy: out std_logic
+		);
+	end component;
+	
+	component ContadorUpDown3
+		port (
+        Clk : in std_logic; -- Clock
+        Rst : in std_logic; -- Reset
+        Q : out std_logic_vector(2 downto 0) -- output
+		);
+	end component;
+	
+	component shiftReg5
+		port(
+			 Clk: in std_logic;
+			 I: in std_logic;
+			 En: in std_logic;
+			 rst: in std_logic;
+			 O: out std_logic_vector(4 downto 0));
+	end component;
+	
+	
+	-- signals
+	signal eq5s2, clrs, wrs, sbusy: std_logic;
+	signal eq5s1: std_logic_vector(2 downto 0);
+	
+	begin
+	
+	serialControl1: serialControl
+		port map (
+			clk => MCLK,
+			enRx => SS,
+			accept => accept,
+			clr => clrs,
+			wr => wrs,
+			rst => Rst,
+			DXval => DXval,
+			eq5 => eq5s2,
+			busy => sbusy
+		);
+		
+	counter1: ContadorUpDown3
+		port map (
+			Clk => sClk,
+			Rst => clrs,
+			Q => eq5s1
+		);
+	
+	shiftReg51: shiftReg5
+		port map (
+			Clk => sClk,
+			I => SDX,
+			En => wrs,
+			rst => Rst,
+			O => D
+		);
+		
+	eq5s2 <= eq5s1(0) and not eq5s1(1) and eq5s1(2);
+	busy <= sbusy;
+
+	
+end serialReceiver_arch;

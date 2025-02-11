@@ -1,0 +1,901 @@
+Analysis & Synthesis report for KeyBoardReader
+Fri Jun 02 15:31:16 2023
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |KeyBoardReader|OutputBuffer:UOutputBuffer|BufferControl:UBufferControl|CurrentState
+ 10. State Machine - |KeyBoardReader|ringBuffer:URingBuffer|RingBufferControl:URingBufferControl|CurrentState
+ 11. State Machine - |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyControl:UKeyControl|CurrentState
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Parameter Settings for User Entity Instance: UsbPort:Uusbport|sld_virtual_jtag:b2v_inst
+ 17. Parameter Settings for User Entity Instance: ringBuffer:URingBuffer|RAM:Uram
+ 18. Parameter Settings for User Entity Instance: CLKDIV:UCLKDIV
+ 19. Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U3FFD"
+ 20. Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U2FFD"
+ 21. Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U1FFD"
+ 22. Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U0FFD"
+ 23. Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister"
+ 24. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF2"
+ 25. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF1"
+ 26. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF0"
+ 27. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3"
+ 28. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3"
+ 29. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U3FFD"
+ 30. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U2FFD"
+ 31. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U1FFD"
+ 32. Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U0FFD"
+ 33. Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF3"
+ 34. Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF2"
+ 35. Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF1"
+ 36. Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF0"
+ 37. Port Connectivity Checks: "UsbPort:Uusbport"
+ 38. Virtual JTAG Settings
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun 02 15:31:16 2023       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; KeyBoardReader                              ;
+; Top-level Entity Name              ; KeyBoardReader                              ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 303                                         ;
+;     Total combinational functions  ; 277                                         ;
+;     Dedicated logic registers      ; 152                                         ;
+; Total registers                    ; 152                                         ;
+; Total pins                         ; 19                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; KeyBoardReader     ; KeyBoardReader     ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                            ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                  ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------+
+; ../UsbPort/usbport.vhd                                             ; yes             ; User VHDL File                               ; C:/ISEL/LIC/UsbPort/usbport.vhd                                                               ;             ;
+; ../OutputBuffer/Registo4.vhd                                       ; yes             ; User VHDL File                               ; C:/ISEL/LIC/OutputBuffer/Registo4.vhd                                                         ;             ;
+; ../OutputBuffer/OutputBuffer.vhd                                   ; yes             ; User VHDL File                               ; C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd                                                     ;             ;
+; ../OutputBuffer/BufferControl.vhd                                  ; yes             ; User VHDL File                               ; C:/ISEL/LIC/OutputBuffer/BufferControl.vhd                                                    ;             ;
+; ../RingBuffer/RingBufferControl.vhd                                ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd                                                  ;             ;
+; ../RingBuffer/RingBuffer.vhd                                       ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/RingBuffer.vhd                                                         ;             ;
+; ../RingBuffer/Registo3.vhd                                         ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/Registo3.vhd                                                           ;             ;
+; ../RingBuffer/Ram.vhd                                              ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/Ram.vhd                                                                ;             ;
+; ../RingBuffer/mux21.vhd                                            ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/mux21.vhd                                                              ;             ;
+; ../RingBuffer/memoryAdressControl.vhd                              ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd                                                ;             ;
+; ../RingBuffer/HA.vhd                                               ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/HA.vhd                                                                 ;             ;
+; ../RingBuffer/FA.vhd                                               ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/FA.vhd                                                                 ;             ;
+; ../RingBuffer/Contador.vhd                                         ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/Contador.vhd                                                           ;             ;
+; ../RingBuffer/AddSub3.vhd                                          ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/AddSub3.vhd                                                            ;             ;
+; ../RingBuffer/Adder3.vhd                                           ; yes             ; User VHDL File                               ; C:/ISEL/LIC/RingBuffer/Adder3.vhd                                                             ;             ;
+; ../KeyScan/Mux41.vhd                                               ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyScan/Mux41.vhd                                                                 ;             ;
+; ../KeyScan/KeyScan.vhd                                             ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyScan/KeyScan.vhd                                                               ;             ;
+; ../KeyScan/FFD.vhd                                                 ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyScan/FFD.vhd                                                                   ;             ;
+; ../KeyScan/DEC.vhd                                                 ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyScan/DEC.vhd                                                                   ;             ;
+; ../KeyScan/Counter.vhd                                             ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyScan/Counter.vhd                                                               ;             ;
+; ../KeyControl/KeyControl.vhd                                       ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyControl/KeyControl.vhd                                                         ;             ;
+; ../KeyDecoder/KeyDecoder.vhd                                       ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyDecoder/KeyDecoder.vhd                                                         ;             ;
+; CLKDIV.vhd                                                         ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyBoardReader/CLKDIV.vhd                                                         ;             ;
+; KeyBoardReader.vhd                                                 ; yes             ; User VHDL File                               ; C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd                                                 ;             ;
+; sld_virtual_jtag.v                                                 ; yes             ; Megafunction                                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag.v                     ;             ;
+; sld_virtual_jtag_basic.v                                           ; yes             ; Megafunction                                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag_basic.v               ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd          ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv      ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_hub.vhd                            ; altera_sld  ;
+; db/ip/sld064e097f/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                       ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                         ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 303                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 277                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 105                      ;
+;     -- 3 input functions                    ; 88                       ;
+;     -- <=2 input functions                  ; 84                       ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 238                      ;
+;     -- arithmetic mode                      ; 39                       ;
+;                                             ;                          ;
+; Total registers                             ; 152                      ;
+;     -- Dedicated logic registers            ; 152                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 19                       ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 107                      ;
+; Total fan-out                               ; 1326                     ;
+; Average fan-out                             ; 2.79                     ;
++---------------------------------------------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                        ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |KeyBoardReader                                                                                                                         ; 277 (10)            ; 152 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 19   ; 0            ; 0          ; |KeyBoardReader                                                                                                                                                                                                                                                                                                                                            ; KeyBoardReader                    ; work         ;
+;    |CLKDIV:UCLKDIV|                                                                                                                     ; 51 (51)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|CLKDIV:UCLKDIV                                                                                                                                                                                                                                                                                                                             ; CLKDIV                            ; work         ;
+;    |KeyDecoder:UKeyDecoder|                                                                                                             ; 13 (0)              ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder                                                                                                                                                                                                                                                                                                                     ; KeyDecoder                        ; work         ;
+;       |KeyControl:UKeyControl|                                                                                                          ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyControl:UKeyControl                                                                                                                                                                                                                                                                                              ; KeyControl                        ; work         ;
+;       |KeyScan:UKeyScan|                                                                                                                ; 11 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan                                                                                                                                                                                                                                                                                                    ; KeyScan                           ; work         ;
+;          |Counter:UCounter|                                                                                                             ; 6 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter                                                                                                                                                                                                                                                                                   ; Counter                           ; work         ;
+;             |FFD:FF0|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF0                                                                                                                                                                                                                                                                           ; FFD                               ; work         ;
+;             |FFD:FF1|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF1                                                                                                                                                                                                                                                                           ; FFD                               ; work         ;
+;             |FFD:FF2|                                                                                                                   ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF2                                                                                                                                                                                                                                                                           ; FFD                               ; work         ;
+;             |FFD:FF3|                                                                                                                   ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF3                                                                                                                                                                                                                                                                           ; FFD                               ; work         ;
+;          |DEC:UDEC|                                                                                                                     ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|DEC:UDEC                                                                                                                                                                                                                                                                                           ; DEC                               ; work         ;
+;          |Mux41:UMux|                                                                                                                   ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Mux41:UMux                                                                                                                                                                                                                                                                                         ; Mux41                             ; work         ;
+;    |OutputBuffer:UOutputBuffer|                                                                                                         ; 4 (0)               ; 9 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer                                                                                                                                                                                                                                                                                                                 ; OutputBuffer                      ; work         ;
+;       |BufferControl:UBufferControl|                                                                                                    ; 4 (4)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer|BufferControl:UBufferControl                                                                                                                                                                                                                                                                                    ; BufferControl                     ; work         ;
+;       |Registo4:UOutputRegister|                                                                                                        ; 0 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer|Registo4:UOutputRegister                                                                                                                                                                                                                                                                                        ; Registo4                          ; work         ;
+;          |FFD:U0FFD|                                                                                                                    ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U0FFD                                                                                                                                                                                                                                                                              ; FFD                               ; work         ;
+;          |FFD:U1FFD|                                                                                                                    ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U1FFD                                                                                                                                                                                                                                                                              ; FFD                               ; work         ;
+;          |FFD:U2FFD|                                                                                                                    ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U2FFD                                                                                                                                                                                                                                                                              ; FFD                               ; work         ;
+;          |FFD:U3FFD|                                                                                                                    ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U3FFD                                                                                                                                                                                                                                                                              ; FFD                               ; work         ;
+;    |ringBuffer:URingBuffer|                                                                                                             ; 78 (0)              ; 18 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer                                                                                                                                                                                                                                                                                                                     ; ringBuffer                        ; work         ;
+;       |RAM:Uram|                                                                                                                        ; 52 (52)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|RAM:Uram                                                                                                                                                                                                                                                                                                            ; RAM                               ; work         ;
+;       |RingBufferControl:URingBufferControl|                                                                                            ; 9 (9)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|RingBufferControl:URingBufferControl                                                                                                                                                                                                                                                                                ; RingBufferControl                 ; work         ;
+;       |memoryAdressControl:UmemoryAdressControl|                                                                                        ; 17 (3)              ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl                                                                                                                                                                                                                                                                            ; memoryAdressControl               ; work         ;
+;          |AddSub3:UAddSub3|                                                                                                             ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3                                                                                                                                                                                                                                                           ; AddSub3                           ; work         ;
+;             |Adder3:UAdder3|                                                                                                            ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3                                                                                                                                                                                                                                            ; Adder3                            ; work         ;
+;                |FA:FA1|                                                                                                                 ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA1                                                                                                                                                                                                                                     ; FA                                ; work         ;
+;                   |HA:HA1|                                                                                                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA1|HA:HA1                                                                                                                                                                                                                              ; HA                                ; work         ;
+;                |FA:FA2|                                                                                                                 ; 2 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA2                                                                                                                                                                                                                                     ; FA                                ; work         ;
+;                   |HA:HA1|                                                                                                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA2|HA:HA1                                                                                                                                                                                                                              ; HA                                ; work         ;
+;                |FA:FA3|                                                                                                                 ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3                                                                                                                                                                                                                                     ; FA                                ; work         ;
+;                   |HA:HA1|                                                                                                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3|HA:HA1                                                                                                                                                                                                                              ; HA                                ; work         ;
+;          |Contador:UIDXGET|                                                                                                             ; 3 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET                                                                                                                                                                                                                                                           ; Contador                          ; work         ;
+;             |FFD:FF0|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF0                                                                                                                                                                                                                                                   ; FFD                               ; work         ;
+;             |FFD:FF1|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF1                                                                                                                                                                                                                                                   ; FFD                               ; work         ;
+;             |FFD:FF2|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF2                                                                                                                                                                                                                                                   ; FFD                               ; work         ;
+;          |Contador:UIDXPUT|                                                                                                             ; 3 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT                                                                                                                                                                                                                                                           ; Contador                          ; work         ;
+;             |FFD:FF0|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT|FFD:FF0                                                                                                                                                                                                                                                   ; FFD                               ; work         ;
+;             |FFD:FF1|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT|FFD:FF1                                                                                                                                                                                                                                                   ; FFD                               ; work         ;
+;             |FFD:FF2|                                                                                                                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXPUT|FFD:FF2                                                                                                                                                                                                                                                   ; FFD                               ; work         ;
+;          |Registo3:URegisto3|                                                                                                           ; 1 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3                                                                                                                                                                                                                                                         ; Registo3                          ; work         ;
+;             |FFD:U0FFD|                                                                                                                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U0FFD                                                                                                                                                                                                                                               ; FFD                               ; work         ;
+;             |FFD:U1FFD|                                                                                                                 ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U1FFD                                                                                                                                                                                                                                               ; FFD                               ; work         ;
+;             |FFD:U2FFD|                                                                                                                 ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U2FFD                                                                                                                                                                                                                                               ; FFD                               ; work         ;
+;             |FFD:U3FFD|                                                                                                                 ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U3FFD                                                                                                                                                                                                                                               ; FFD                               ; work         ;
+;          |mux21:Umux21|                                                                                                                 ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|mux21:Umux21                                                                                                                                                                                                                                                               ; mux21                             ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 121 (1)             ; 86 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 120 (0)             ; 86 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 120 (0)             ; 86 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 120 (1)             ; 86 (5)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 119 (0)             ; 81 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 119 (81)            ; 81 (53)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 20 (20)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                 ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                     ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |KeyBoardReader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |KeyBoardReader|OutputBuffer:UOutputBuffer|BufferControl:UBufferControl|CurrentState                                                                        ;
++------------------------------+-----------------------------+-----------------------+----------------------------+------------------------------+----------------------------+
+; Name                         ; CurrentState.STATE_CLK_ZERO ; CurrentState.STATE_WR ; CurrentState.STATE_PULSING ; CurrentState.STATE_RECEIVING ; CurrentState.STATE_WAITING ;
++------------------------------+-----------------------------+-----------------------+----------------------------+------------------------------+----------------------------+
+; CurrentState.STATE_WAITING   ; 0                           ; 0                     ; 0                          ; 0                            ; 0                          ;
+; CurrentState.STATE_RECEIVING ; 0                           ; 0                     ; 0                          ; 1                            ; 1                          ;
+; CurrentState.STATE_PULSING   ; 0                           ; 0                     ; 1                          ; 0                            ; 1                          ;
+; CurrentState.STATE_WR        ; 0                           ; 1                     ; 0                          ; 0                            ; 1                          ;
+; CurrentState.STATE_CLK_ZERO  ; 1                           ; 0                     ; 0                          ; 0                            ; 1                          ;
++------------------------------+-----------------------------+-----------------------+----------------------------+------------------------------+----------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |KeyBoardReader|ringBuffer:URingBuffer|RingBufferControl:URingBufferControl|CurrentState                                                                                                                                                 ;
++------------------------------+------------------------+------------------------------+------------------------------+---------------------------+---------------------------+-----------------------+-----------------------+----------------------------+
+; Name                         ; CurrentState.STATE_DAC ; CurrentState.STATE_NOTPUTGET ; CurrentState.STATE_PUTNOTGET ; CurrentState.STATE_INCGET ; CurrentState.STATE_INCPUT ; CurrentState.STATE_WR ; CurrentState.STATE_RE ; CurrentState.STATE_WAITING ;
++------------------------------+------------------------+------------------------------+------------------------------+---------------------------+---------------------------+-----------------------+-----------------------+----------------------------+
+; CurrentState.STATE_WAITING   ; 0                      ; 0                            ; 0                            ; 0                         ; 0                         ; 0                     ; 0                     ; 0                          ;
+; CurrentState.STATE_RE        ; 0                      ; 0                            ; 0                            ; 0                         ; 0                         ; 0                     ; 1                     ; 1                          ;
+; CurrentState.STATE_WR        ; 0                      ; 0                            ; 0                            ; 0                         ; 0                         ; 1                     ; 0                     ; 1                          ;
+; CurrentState.STATE_INCPUT    ; 0                      ; 0                            ; 0                            ; 0                         ; 1                         ; 0                     ; 0                     ; 1                          ;
+; CurrentState.STATE_INCGET    ; 0                      ; 0                            ; 0                            ; 1                         ; 0                         ; 0                     ; 0                     ; 1                          ;
+; CurrentState.STATE_PUTNOTGET ; 0                      ; 0                            ; 1                            ; 0                         ; 0                         ; 0                     ; 0                     ; 1                          ;
+; CurrentState.STATE_NOTPUTGET ; 0                      ; 1                            ; 0                            ; 0                         ; 0                         ; 0                     ; 0                     ; 1                          ;
+; CurrentState.STATE_DAC       ; 1                      ; 0                            ; 0                            ; 0                         ; 0                         ; 0                     ; 0                     ; 1                          ;
++------------------------------+------------------------+------------------------------+------------------------------+---------------------------+---------------------------+-----------------------+-----------------------+----------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------+
+; State Machine - |KeyBoardReader|KeyDecoder:UKeyDecoder|KeyControl:UKeyControl|CurrentState                        ;
++-----------------------------+--------------------------+----------------------------+-----------------------------+
+; Name                        ; CurrentState.STATE_READY ; CurrentState.STATE_WAITING ; CurrentState.STATE_SCANNING ;
++-----------------------------+--------------------------+----------------------------+-----------------------------+
+; CurrentState.STATE_SCANNING ; 0                        ; 0                          ; 0                           ;
+; CurrentState.STATE_WAITING  ; 0                        ; 1                          ; 1                           ;
+; CurrentState.STATE_READY    ; 1                        ; 0                          ; 1                           ;
++-----------------------------+--------------------------+----------------------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ringBuffer:URingBuffer|RAM:Uram|ram~8               ; rtl~0               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~4               ; rtl~1               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~0               ; rtl~2               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~12              ; rtl~3               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~20              ; rtl~4               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~24              ; rtl~5               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~16              ; rtl~6               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~28              ; rtl~7               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~9               ; rtl~0               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~5               ; rtl~1               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~1               ; rtl~2               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~13              ; rtl~3               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~21              ; rtl~4               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~25              ; rtl~5               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~17              ; rtl~6               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~29              ; rtl~7               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~10              ; rtl~0               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~6               ; rtl~1               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~2               ; rtl~2               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~14              ; rtl~3               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~22              ; rtl~4               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~26              ; rtl~5               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~18              ; rtl~6               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~30              ; rtl~7               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~11              ; rtl~0               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~7               ; rtl~1               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~3               ; rtl~2               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~15              ; rtl~3               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~23              ; rtl~4               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~27              ; rtl~5               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~19              ; rtl~6               ; yes                    ;
+; ringBuffer:URingBuffer|RAM:Uram|ram~31              ; rtl~7               ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++------------------------------------------------------------------------+--------------------+
+; Register name                                                          ; Reason for Removal ;
++------------------------------------------------------------------------+--------------------+
+; KeyDecoder:UKeyDecoder|KeyControl:UKeyControl|CurrentState.STATE_READY ; Lost fanout        ;
+; Total Number of Removed Registers = 1                                  ;                    ;
++------------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 152   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 10    ;
+; Number of registers using Asynchronous Clear ; 66    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 62    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; CLKDIV:UCLKDIV|count[0]                                                                                                                                                                                                                                                                                                         ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; Total number of inverted registers = 3                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UsbPort:Uusbport|sld_virtual_jtag:b2v_inst ;
++-------------------------+------------------+--------------------------------------------+
+; Parameter Name          ; Value            ; Type                                       ;
++-------------------------+------------------+--------------------------------------------+
+; sld_auto_instance_index ; YES              ; String                                     ;
+; sld_instance_index      ; 0                ; Signed Integer                             ;
+; sld_ir_width            ; 8                ; Signed Integer                             ;
+; sld_sim_n_scan          ; 0                ; Signed Integer                             ;
+; sld_sim_action          ; UNUSED           ; String                                     ;
+; sld_sim_total_length    ; 0                ; Signed Integer                             ;
+; lpm_type                ; sld_virtual_jtag ; String                                     ;
+; lpm_hint                ; UNUSED           ; String                                     ;
++-------------------------+------------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ringBuffer:URingBuffer|RAM:Uram ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; address_width  ; 3     ; Signed Integer                                      ;
+; data_width     ; 4     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CLKDIV:UCLKDIV ;
++----------------+--------+-----------------------------------+
+; Parameter Name ; Value  ; Type                              ;
++----------------+--------+-----------------------------------+
+; div            ; 500000 ; Signed Integer                    ;
++----------------+--------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U3FFD" ;
++------+-------+----------+-----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                         ;
++------+-------+----------+-----------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                    ;
++------+-------+----------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U2FFD" ;
++------+-------+----------+-----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                         ;
++------+-------+----------+-----------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                    ;
++------+-------+----------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U1FFD" ;
++------+-------+----------+-----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                         ;
++------+-------+----------+-----------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                    ;
++------+-------+----------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister|FFD:U0FFD" ;
++------+-------+----------+-----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                         ;
++------+-------+----------+-----------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                    ;
++------+-------+----------+-----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF2" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF1" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET|FFD:FF0" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA3" ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                 ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------+
+; co   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3"                           ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; b[3..1] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; b[0]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; cobo    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U3FFD" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U2FFD" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U1FFD" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3|FFD:U0FFD" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF3" ;
++------+-------+----------+--------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                            ;
++------+-------+----------+--------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                       ;
++------+-------+----------+--------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF2" ;
++------+-------+----------+--------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                            ;
++------+-------+----------+--------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                       ;
++------+-------+----------+--------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF1" ;
++------+-------+----------+--------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                            ;
++------+-------+----------+--------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                       ;
++------+-------+----------+--------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF0" ;
++------+-------+----------+--------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                            ;
++------+-------+----------+--------------------------------------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                                                       ;
++------+-------+----------+--------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UsbPort:Uusbport"                                                                               ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; inputport[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; inputport[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; outputport[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outputport[7]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Virtual JTAG Settings                                                                                                                                        ;
++----------------+------------+------------------+----------+---------+-----------------+-------------------------+--------------------------------------------+
+; Instance Index ; Auto Index ; Index Reassigned ; IR Width ; Address ; USER1 DR length ; VIR capture instruction ; Hierarchy Location                         ;
++----------------+------------+------------------+----------+---------+-----------------+-------------------------+--------------------------------------------+
+; 0              ; YES        ; N/A              ; 8        ; 0x100   ; 9               ; 0x00B                   ; UsbPort:Uusbport|sld_virtual_jtag:b2v_inst ;
++----------------+------------+------------------+----------+---------+-----------------+-------------------------+--------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 58                          ;
+; cycloneiii_ff         ; 66                          ;
+;     CLR               ; 29                          ;
+;     ENA CLR           ; 4                           ;
+;     plain             ; 33                          ;
+; cycloneiii_lcell_comb ; 159                         ;
+;     arith             ; 31                          ;
+;         2 data inputs ; 31                          ;
+;     normal            ; 128                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 56                          ;
+;         4 data inputs ; 53                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.72                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Fri Jun 02 15:30:40 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off KeyBoardReader -c KeyBoardReader
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/usbport/usbport.vhd
+    Info (12022): Found design unit 1: UsbPort-bdf_type File: C:/ISEL/LIC/UsbPort/usbport.vhd Line: 33
+    Info (12023): Found entity 1: UsbPort File: C:/ISEL/LIC/UsbPort/usbport.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/outputbuffer/registo4.vhd
+    Info (12022): Found design unit 1: Registo4-logic File: C:/ISEL/LIC/OutputBuffer/Registo4.vhd Line: 14
+    Info (12023): Found entity 1: Registo4 File: C:/ISEL/LIC/OutputBuffer/Registo4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/outputbuffer/outputbuffer.vhd
+    Info (12022): Found design unit 1: OutputBuffer-OutputBuffer_arq File: C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd Line: 17
+    Info (12023): Found entity 1: OutputBuffer File: C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/outputbuffer/buffercontrol.vhd
+    Info (12022): Found design unit 1: BufferControl-behavioral File: C:/ISEL/LIC/OutputBuffer/BufferControl.vhd Line: 17
+    Info (12023): Found entity 1: BufferControl File: C:/ISEL/LIC/OutputBuffer/BufferControl.vhd Line: 5
+Warning (12019): Can't analyze file -- file ../RingBuffer/somador.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/ringbuffercontrol.vhd
+    Info (12022): Found design unit 1: RingBufferControl-behavioral File: C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd Line: 22
+    Info (12023): Found entity 1: RingBufferControl File: C:/ISEL/LIC/RingBuffer/RingBufferControl.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/ringbuffer.vhd
+    Info (12022): Found design unit 1: ringBuffer-logic File: C:/ISEL/LIC/RingBuffer/RingBuffer.vhd Line: 18
+    Info (12023): Found entity 1: ringBuffer File: C:/ISEL/LIC/RingBuffer/RingBuffer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/registo3.vhd
+    Info (12022): Found design unit 1: Registo3-logic File: C:/ISEL/LIC/RingBuffer/Registo3.vhd Line: 14
+    Info (12023): Found entity 1: Registo3 File: C:/ISEL/LIC/RingBuffer/Registo3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/ram.vhd
+    Info (12022): Found design unit 1: RAM-behavioral File: C:/ISEL/LIC/RingBuffer/Ram.vhd Line: 34
+    Info (12023): Found entity 1: RAM File: C:/ISEL/LIC/RingBuffer/Ram.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/mux21.vhd
+    Info (12022): Found design unit 1: mux21-arq_mux21 File: C:/ISEL/LIC/RingBuffer/mux21.vhd Line: 11
+    Info (12023): Found entity 1: mux21 File: C:/ISEL/LIC/RingBuffer/mux21.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/memoryadresscontrol.vhd
+    Info (12022): Found design unit 1: memoryAdressControl-arq_memoryAdressControl File: C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd Line: 16
+    Info (12023): Found entity 1: memoryAdressControl File: C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/ha.vhd
+    Info (12022): Found design unit 1: HA-logic File: C:/ISEL/LIC/RingBuffer/HA.vhd Line: 13
+    Info (12023): Found entity 1: HA File: C:/ISEL/LIC/RingBuffer/HA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/fa.vhd
+    Info (12022): Found design unit 1: FA-logic File: C:/ISEL/LIC/RingBuffer/FA.vhd Line: 14
+    Info (12023): Found entity 1: FA File: C:/ISEL/LIC/RingBuffer/FA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/contador.vhd
+    Info (12022): Found design unit 1: Contador-logic File: C:/ISEL/LIC/RingBuffer/Contador.vhd Line: 13
+    Info (12023): Found entity 1: Contador File: C:/ISEL/LIC/RingBuffer/Contador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/addsub3.vhd
+    Info (12022): Found design unit 1: AddSub3-logic File: C:/ISEL/LIC/RingBuffer/AddSub3.vhd Line: 14
+    Info (12023): Found entity 1: AddSub3 File: C:/ISEL/LIC/RingBuffer/AddSub3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/ringbuffer/adder3.vhd
+    Info (12022): Found design unit 1: Adder3-logic File: C:/ISEL/LIC/RingBuffer/Adder3.vhd Line: 14
+    Info (12023): Found entity 1: Adder3 File: C:/ISEL/LIC/RingBuffer/Adder3.vhd Line: 4
+Warning (12090): Entity "Mux41" obtained from "../KeyScan/Mux41.vhd" instead of from Quartus Prime megafunction library File: C:/ISEL/LIC/KeyScan/Mux41.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keyscan/mux41.vhd
+    Info (12022): Found design unit 1: Mux41-logic File: C:/ISEL/LIC/KeyScan/Mux41.vhd Line: 14
+    Info (12023): Found entity 1: Mux41 File: C:/ISEL/LIC/KeyScan/Mux41.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keyscan/keyscan.vhd
+    Info (12022): Found design unit 1: KeyScan-logic File: C:/ISEL/LIC/KeyScan/KeyScan.vhd Line: 16
+    Info (12023): Found entity 1: KeyScan File: C:/ISEL/LIC/KeyScan/KeyScan.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keyscan/ffd.vhd
+    Info (12022): Found design unit 1: FFD-logicFunction File: C:/ISEL/LIC/KeyScan/FFD.vhd Line: 14
+    Info (12023): Found entity 1: FFD File: C:/ISEL/LIC/KeyScan/FFD.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keyscan/dec.vhd
+    Info (12022): Found design unit 1: DEC-arq_DEC File: C:/ISEL/LIC/KeyScan/DEC.vhd Line: 10
+    Info (12023): Found entity 1: DEC File: C:/ISEL/LIC/KeyScan/DEC.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keyscan/counter.vhd
+    Info (12022): Found design unit 1: Counter-logic File: C:/ISEL/LIC/KeyScan/Counter.vhd Line: 13
+    Info (12023): Found entity 1: Counter File: C:/ISEL/LIC/KeyScan/Counter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keycontrol/keycontrol.vhd
+    Info (12022): Found design unit 1: KeyControl-behavioral File: C:/ISEL/LIC/KeyControl/KeyControl.vhd Line: 15
+    Info (12023): Found entity 1: KeyControl File: C:/ISEL/LIC/KeyControl/KeyControl.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /isel/lic/keydecoder/keydecoder.vhd
+    Info (12022): Found design unit 1: KeyDecoder-logic File: C:/ISEL/LIC/KeyDecoder/KeyDecoder.vhd Line: 16
+    Info (12023): Found entity 1: KeyDecoder File: C:/ISEL/LIC/KeyDecoder/KeyDecoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file clkdiv.vhd
+    Info (12022): Found design unit 1: CLKDIV-bhv File: C:/ISEL/LIC/KeyBoardReader/CLKDIV.vhd Line: 11
+    Info (12023): Found entity 1: CLKDIV File: C:/ISEL/LIC/KeyBoardReader/CLKDIV.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file keyboardreader.vhd
+    Info (12022): Found design unit 1: KeyBoardReader-logic File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 20
+    Info (12023): Found entity 1: KeyBoardReader File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file keyboardreader_tb.vhd
+    Info (12022): Found design unit 1: KeyBoardReader_tb-KeyBoardReader_tb_arch File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader_tb.vhd Line: 7
+    Info (12023): Found entity 1: KeyBoardReader_tb File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader_tb.vhd Line: 4
+Info (12127): Elaborating entity "KeyBoardReader" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "sout[7..6]" at KeyBoardReader.vhd(82) File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 82
+Warning (10873): Using initial value X (don't care) for net "sout[4]" at KeyBoardReader.vhd(82) File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 82
+Info (12128): Elaborating entity "UsbPort" for hierarchy "UsbPort:Uusbport" File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 86
+Info (12128): Elaborating entity "sld_virtual_jtag" for hierarchy "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst" File: C:/ISEL/LIC/UsbPort/usbport.vhd Line: 80
+Info (12130): Elaborated megafunction instantiation "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst" File: C:/ISEL/LIC/UsbPort/usbport.vhd Line: 80
+Info (12133): Instantiated megafunction "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst" with the following parameter: File: C:/ISEL/LIC/UsbPort/usbport.vhd Line: 80
+    Info (12134): Parameter "lpm_type" = "sld_virtual_jtag"
+    Info (12134): Parameter "sld_auto_instance_index" = "YES"
+    Info (12134): Parameter "sld_instance_index" = "0"
+    Info (12134): Parameter "sld_ir_width" = "8"
+    Info (12134): Parameter "sld_sim_action" = "UNUSED"
+    Info (12134): Parameter "sld_sim_n_scan" = "0"
+    Info (12134): Parameter "sld_sim_total_length" = "0"
+Info (12128): Elaborating entity "sld_virtual_jtag_basic" for hierarchy "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag.v Line: 152
+Info (12131): Elaborated megafunction instantiation "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst", which is child of megafunction instantiation "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag.v Line: 152
+Info (12128): Elaborating entity "sld_virtual_jtag_impl" for hierarchy "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag_basic.v Line: 152
+Info (12131): Elaborated megafunction instantiation "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst", which is child of megafunction instantiation "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag_basic.v Line: 152
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_virtual_jtag_basic.v Line: 415
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "UsbPort:Uusbport|sld_virtual_jtag:b2v_inst|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "KeyDecoder" for hierarchy "KeyDecoder:UKeyDecoder" File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 92
+Info (12128): Elaborating entity "KeyScan" for hierarchy "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan" File: C:/ISEL/LIC/KeyDecoder/KeyDecoder.vhd Line: 47
+Info (12128): Elaborating entity "Counter" for hierarchy "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter" File: C:/ISEL/LIC/KeyScan/KeyScan.vhd Line: 64
+Info (12128): Elaborating entity "FFD" for hierarchy "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Counter:UCounter|FFD:FF0" File: C:/ISEL/LIC/KeyScan/Counter.vhd Line: 32
+Info (12128): Elaborating entity "DEC" for hierarchy "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|DEC:UDEC" File: C:/ISEL/LIC/KeyScan/KeyScan.vhd Line: 72
+Info (12128): Elaborating entity "Mux41" for hierarchy "KeyDecoder:UKeyDecoder|KeyScan:UKeyScan|Mux41:UMux" File: C:/ISEL/LIC/KeyScan/KeyScan.vhd Line: 80
+Info (12128): Elaborating entity "KeyControl" for hierarchy "KeyDecoder:UKeyDecoder|KeyControl:UKeyControl" File: C:/ISEL/LIC/KeyDecoder/KeyDecoder.vhd Line: 58
+Info (12128): Elaborating entity "ringBuffer" for hierarchy "ringBuffer:URingBuffer" File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 104
+Info (12128): Elaborating entity "RingBufferControl" for hierarchy "ringBuffer:URingBuffer|RingBufferControl:URingBufferControl" File: C:/ISEL/LIC/RingBuffer/RingBuffer.vhd Line: 62
+Info (12128): Elaborating entity "memoryAdressControl" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl" File: C:/ISEL/LIC/RingBuffer/RingBuffer.vhd Line: 77
+Info (12128): Elaborating entity "Registo3" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Registo3:URegisto3" File: C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd Line: 59
+Info (12128): Elaborating entity "AddSub3" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3" File: C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd Line: 69
+Info (12128): Elaborating entity "Adder3" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3" File: C:/ISEL/LIC/RingBuffer/AddSub3.vhd Line: 35
+Warning (10541): VHDL Signal Declaration warning at Adder3.vhd(10): used implicit default value for signal "CO" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/ISEL/LIC/RingBuffer/Adder3.vhd Line: 10
+Info (12128): Elaborating entity "FA" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA0" File: C:/ISEL/LIC/RingBuffer/Adder3.vhd Line: 29
+Info (12128): Elaborating entity "HA" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|AddSub3:UAddSub3|Adder3:UAdder3|FA:FA0|HA:HA0" File: C:/ISEL/LIC/RingBuffer/FA.vhd Line: 28
+Info (12128): Elaborating entity "Contador" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|Contador:UIDXGET" File: C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd Line: 77
+Info (12128): Elaborating entity "mux21" for hierarchy "ringBuffer:URingBuffer|memoryAdressControl:UmemoryAdressControl|mux21:Umux21" File: C:/ISEL/LIC/RingBuffer/memoryAdressControl.vhd Line: 93
+Info (12128): Elaborating entity "RAM" for hierarchy "ringBuffer:URingBuffer|RAM:Uram" File: C:/ISEL/LIC/RingBuffer/RingBuffer.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at Ram.vhd(43): signal "ram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/ISEL/LIC/RingBuffer/Ram.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at Ram.vhd(46): signal "din" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/ISEL/LIC/RingBuffer/Ram.vhd Line: 46
+Info (12128): Elaborating entity "OutputBuffer" for hierarchy "OutputBuffer:UOutputBuffer" File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 118
+Info (12128): Elaborating entity "BufferControl" for hierarchy "OutputBuffer:UOutputBuffer|BufferControl:UBufferControl" File: C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd Line: 46
+Info (12128): Elaborating entity "Registo4" for hierarchy "OutputBuffer:UOutputBuffer|Registo4:UOutputRegister" File: C:/ISEL/LIC/OutputBuffer/OutputBuffer.vhd Line: 57
+Info (12128): Elaborating entity "CLKDIV" for hierarchy "CLKDIV:UCLKDIV" File: C:/ISEL/LIC/KeyBoardReader/KeyBoardReader.vhd Line: 131
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2023.06.02.15:31:02 Progress: Loading sld064e097f/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld064e097f/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/ISEL/LIC/KeyBoardReader/db/ip/sld064e097f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 331 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 307 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Fri Jun 02 15:31:16 2023
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:46
+
+

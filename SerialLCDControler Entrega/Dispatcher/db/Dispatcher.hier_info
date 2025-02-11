@@ -1,0 +1,20 @@
+|Dispatcher
+Dval => Selector0.IN2
+Dval => Selector2.IN1
+Dval => Selector1.IN1
+Din[0] => Dout[0].DATAIN
+Din[1] => Dout[1].DATAIN
+Din[2] => Dout[2].DATAIN
+Din[3] => Dout[3].DATAIN
+Din[4] => Dout[4].DATAIN
+Dout[0] << Din[0].DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] << Din[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] << Din[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] << Din[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] << Din[4].DB_MAX_OUTPUT_PORT_TYPE
+Wrl << sWrl.DB_MAX_OUTPUT_PORT_TYPE
+rst => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+done << done.DB_MAX_OUTPUT_PORT_TYPE
+
+

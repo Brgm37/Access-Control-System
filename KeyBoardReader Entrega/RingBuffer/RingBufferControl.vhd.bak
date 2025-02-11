@@ -1,0 +1,65 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity RingBufferControl is
+	port(
+		Dav: In std_logic;
+		CTS: In std_logic;
+		full: In std_logic;
+		empty: In std_logic;
+		rst: in std_logic;
+		Dac: out std_logic;
+		Wr: out std_logic;
+		selPG: out std_logic;
+		Wreg: out std_logic;
+	);
+end RingBufferControl;
+
+architecture behavioral of RingBufferControl is
+type STATE_TYPE is (STATE_WAITING, STATE_RE, STATE_WR, STATE_INCPUT, STATE_INCGET);
+
+	signal CurrentState, NextState: STATE_TYPE;
+
+	begin
+--		Flip-Flop's
+		CurrentState <= STATE_WAITING when rst = '1' else Nextstate when rising_edge(clk);
+		
+--		Generate Next State 
+		GenerateNextState:
+			process (CurrentState, Dav, CTS, full, empty) 
+				begin
+					case CurrentState is
+						when STATE_WAITING		=> if(Dav = '0' and full = '0') then
+																	NextState <= STATE_WR;
+															else
+																	if(CTS = '1' and empty = '0')
+																		NextState <= STATE_RE;
+																	else
+																		NextState <= STATE_WAITING;
+															end if;
+						when STATE_WR			=> if(Dav = '0') then
+																NextState <= STATE_INCPUT;
+														else
+																NextState <= STATE_WR;
+														end if;
+						when STATE_RE			=> if(CTS = '0') then
+																NextState <= STATE_INCGET;
+														else
+																NextState <= STATE_RE;
+														end if;
+						when STATE_INCPUT    => NextState <= STATE_WAITING;
+						
+						when STATE_INCGET		=> NextState <= STATE_WAITING;
+														
+					end case;
+			end process;
+			
+--		Generate Outputs
+		Wr <= '1' when (CurrentState = STATE_WR) else '0';
+		selPG <= '1' when (CurrentState = STATE_WR) else '0';
+		Wreg <= '1' when (CurrentState = STATE_RE) else '0';
+		DAC <= '1' when (CurrentState = STATE_WR) else '0'
+		Dout <= Din;
+		
+end architecture;
